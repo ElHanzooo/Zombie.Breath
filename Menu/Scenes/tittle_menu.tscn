@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://dgwhwcvfrpgqj"]
+
+[ext_resource type="Script" uid="uid://cmugq7hd5bqxv" path="res://Menu/Scripts/Tittle Menu/TittleMenu.cs" id="1_4t1td"]
+[ext_resource type="Texture2D" uid="uid://bejgd7ftbxc4s" path="res://Menu/Sprites/Tittle Menu/Background/4.png" id="1_revhq"]
+[ext_resource type="Texture2D" uid="uid://c6dikidbi5ift" path="res://Menu/Sprites/Tittle Menu/Background/6.png" id="2_efsn5"]
+[ext_resource type="Texture2D" uid="uid://bg1ftv7ydfvuf" path="res://Menu/Sprites/Tittle Menu/Background/10.png" id="3_v5v8a"]
+[ext_resource type="Texture2D" uid="uid://dyvdmhff3gtcj" path="res://Menu/Sprites/Tittle Menu/Background/5.png" id="4_4t1td"]
+[ext_resource type="Texture2D" uid="uid://noccbro6qq6r" path="res://Menu/Sprites/Tittle Menu/Background/1.png" id="5_y1dot"]
+[ext_resource type="Texture2D" uid="uid://dy4xyk8i5odvr" path="res://Menu/Sprites/Tittle Menu/Background/8.png" id="6_kl3ro"]
+[ext_resource type="Texture2D" uid="uid://lr6op0mklk5b" path="res://Menu/Sprites/Tittle Menu/Background/2.png" id="7_3vvlo"]
+[ext_resource type="Texture2D" uid="uid://cl2k78apl55aw" path="res://Menu/Sprites/Tittle Menu/Background/7.png" id="8_xpm64"]
+[ext_resource type="Texture2D" uid="uid://gnv2ak2cnaqf" path="res://Menu/Sprites/Tittle Menu/Background/9.png" id="9_slt58"]
+[ext_resource type="Texture2D" uid="uid://cvwya4i4wjgna" path="res://Menu/Sprites/Tittle Menu/Background/3.png" id="10_iuc6r"]
+[ext_resource type="Texture2D" uid="uid://lww01y7qgy3u" path="res://Menu/Sprites/Tittle Menu/Black Background.png" id="11_ldacs"]
+[ext_resource type="Texture2D" uid="uid://bpgsxrrhqgxsu" path="res://Menu/Sprites/Tittle Menu/Characters/Mike.png" id="11_v5v8a"]
+[ext_resource type="Texture2D" uid="uid://r1ssnqfxo3fc" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie.png" id="12_4t1td"]
+[ext_resource type="Texture2D" uid="uid://b6d07eklg1ufg" path="res://Menu/Sprites/Tittle Menu/Logo.png" id="12_xxhgw"]
+[ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/ZB menu.mp3" id="16_y1dot"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_vmyal"]
+frames = 10
+frame_0/texture = ExtResource("1_revhq")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_efsn5")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_v5v8a")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_4t1td")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("5_y1dot")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("6_kl3ro")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("7_3vvlo")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("8_xpm64")
+frame_7/duration = 0.1
+frame_8/texture = ExtResource("9_slt58")
+frame_8/duration = 0.1
+frame_9/texture = ExtResource("10_iuc6r")
+frame_9/duration = 0.1
+
+[sub_resource type="Animation" id="Animation_v5v8a"]
+resource_name = "Entry"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(729, -0.05827923, 178.782, 0.1, -306.76794, 215, -0.23333335, 4.223938, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mike:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(719, -0.25, 0, 0.33333334, -3.9489746, 134, -0.8666667, 39.043777, 0, 0),
+"times": PackedFloat32Array(0.1, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(717, -0.25, 0, 0.23333332, 13.312378, 71, -0.43333328, 29.545998, 0, 0),
+"times": PackedFloat32Array(0.4, 2)
+}
+
+[sub_resource type="Animation" id="Animation_4t1td"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mike:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Logo:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1dot"]
+_data = {
+&"Entry": SubResource("Animation_v5v8a"),
+&"RESET": SubResource("Animation_4t1td")
+}
+
+[node name="TittleMenu" type="Control" unique_id=2130431488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4t1td")
+
+[node name="Background" type="TextureRect" parent="." unique_id=383344650]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -358.0
+offset_right = 720.0
+offset_bottom = 362.0
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_vmyal")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=1946085205]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -720.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_vmyal")
+
+[node name="Mike" type="TextureRect" parent="." unique_id=1110433560]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -195.00002
+offset_top = -720.0
+offset_right = 150.99998
+offset_bottom = -373.99963
+grow_vertical = 0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("11_v5v8a")
+
+[node name="Character" type="TextureRect" parent="." unique_id=396173262]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.00012
+offset_top = -720.0
+offset_right = -43.0
+offset_bottom = -336.9995
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("12_4t1td")
+
+[node name="BlackBackground" type="TextureRect" parent="." unique_id=1812270304]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -969.0
+offset_top = -360.0
+offset_right = 969.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ldacs")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=52862197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.80002
+offset_top = -360.0
+offset_right = 761.19995
+offset_bottom = 220.00061
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_xxhgw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288191962]
+libraries/ = SubResource("AnimationLibrary_y1dot")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1235708610]
+stream = ExtResource("16_y1dot")
+autoplay = true
+parameters/looping = true
