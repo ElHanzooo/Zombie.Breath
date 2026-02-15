@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://r1ssnqfxo3fc" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie.png" id="12_4t1td"]
 [ext_resource type="Texture2D" uid="uid://b6d07eklg1ufg" path="res://Menu/Sprites/Tittle Menu/Logo.png" id="12_xxhgw"]
 [ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/ZB menu.mp3" id="16_y1dot"]
+[ext_resource type="Script" uid="uid://day7cl8gmsms5" path="res://Menu/Scripts/Tittle Menu/LogoShake.cs" id="17_mxk4f"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_vmyal"]
 frames = 10
@@ -42,7 +43,6 @@ frame_9/duration = 0.1
 
 [sub_resource type="Animation" id="Animation_v5v8a"]
 resource_name = "Entry"
-length = 2.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +51,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(729, -0.05827923, 178.782, 0.1, -306.76794, 215, -0.23333335, 4.223938, 0, 0),
+"points": PackedFloat32Array(580, -0.118956454, 177.63617, 0.23333333, -348.43372, 70, -0.5, 19.309883, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
@@ -61,9 +61,9 @@ tracks/1/path = NodePath("Mike:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(719, -0.25, 0, 0.33333334, -3.9489746, 134, -0.8666667, 39.043777, 0, 0),
-"times": PackedFloat32Array(0.1, 2)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(719, -0.25, 0, 0.4, 7.5405884, 134, -0.8666667, 39.043777, 0, 0),
+"times": PackedFloat32Array(0.1, 1)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -73,8 +73,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(717, -0.25, 0, 0.23333332, 13.312378, 71, -0.43333328, 29.545998, 0, 0),
-"times": PackedFloat32Array(0.4, 2)
+"points": PackedFloat32Array(717, -0.25, 0, 0.4666667, 6.6174927, 71, -0.56666666, 31.950905, 0, 0),
+"times": PackedFloat32Array(0.23, 1)
 }
 
 [sub_resource type="Animation" id="Animation_4t1td"]
@@ -173,7 +173,7 @@ anchor_bottom = 1.0
 offset_left = -195.00002
 offset_top = -720.0
 offset_right = 150.99998
-offset_bottom = -373.99963
+offset_bottom = -373.99994
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("11_v5v8a")
@@ -188,7 +188,7 @@ anchor_bottom = 1.0
 offset_left = -426.00012
 offset_top = -720.0
 offset_right = -43.0
-offset_bottom = -336.9995
+offset_bottom = -336.99902
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
@@ -216,14 +216,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.80002
+offset_left = -507.5
 offset_top = -360.0
-offset_right = 761.19995
+offset_right = 507.5
 offset_bottom = 220.00061
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(507.5, 290)
 texture = ExtResource("12_xxhgw")
+
+[node name="LogoShake" type="Node" parent="." unique_id=325887429 node_paths=PackedStringArray("_logo")]
+script = ExtResource("17_mxk4f")
+_logo = NodePath("../Logo")
+rotationAmplitude = 1.0
+shakeSpeed = 70.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288191962]
 libraries/ = SubResource("AnimationLibrary_y1dot")
