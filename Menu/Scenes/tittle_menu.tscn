@@ -16,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://r1ssnqfxo3fc" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie.png" id="12_4t1td"]
 [ext_resource type="Texture2D" uid="uid://b6d07eklg1ufg" path="res://Menu/Sprites/Tittle Menu/Logo.png" id="12_xxhgw"]
 [ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/ZB menu.mp3" id="16_y1dot"]
-[ext_resource type="Script" uid="uid://day7cl8gmsms5" path="res://Menu/Scripts/Tittle Menu/LogoShake.cs" id="17_mxk4f"]
+[ext_resource type="Texture2D" uid="uid://sgskbg2smx3n" path="res://Menu/Sprites/Tittle Menu/Button/ENTER.svg" id="18_dt7la"]
+[ext_resource type="Texture2D" uid="uid://b6ornq1xepkkv" path="res://Menu/Sprites/Tittle Menu/Button/ENTER CLICK.svg" id="19_51cot"]
+[ext_resource type="Script" uid="uid://duxeb768ijwj7" path="res://Menu/Scripts/Tittle Menu/StartPressed.cs" id="20_7f851"]
+[ext_resource type="AudioStream" uid="uid://csg12a5ar22de" path="res://Menu/SFX/start.mp3" id="20_51cot"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_vmyal"]
 frames = 10
@@ -41,8 +44,28 @@ frame_8/duration = 0.1
 frame_9/texture = ExtResource("10_iuc6r")
 frame_9/duration = 0.1
 
+[sub_resource type="SystemFont" id="SystemFont_dt7la"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51cot"]
+texture = ExtResource("18_dt7la")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7f851"]
+texture = ExtResource("19_51cot")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l2cqw"]
+texture = ExtResource("18_dt7la")
+
+[sub_resource type="InputEventKey" id="InputEventKey_dt7la"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_51cot"]
+events = [SubResource("InputEventKey_dt7la")]
+
 [sub_resource type="Animation" id="Animation_v5v8a"]
 resource_name = "Entry"
+length = 1.2
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,9 +73,9 @@ tracks/0/path = NodePath("Logo:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
+"handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(580, -0.118956454, 177.63617, 0.23333333, -348.43372, 70, -0.5, 19.309883, 0, 0),
-"times": PackedFloat32Array(0, 1)
+"times": PackedFloat32Array(0.2, 1.2)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -63,7 +86,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(719, -0.25, 0, 0.4, 7.5405884, 134, -0.8666667, 39.043777, 0, 0),
-"times": PackedFloat32Array(0.1, 1)
+"times": PackedFloat32Array(0.3, 1.2)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -74,7 +97,30 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(717, -0.25, 0, 0.4666667, 6.6174927, 71, -0.56666666, 31.950905, 0, 0),
-"times": PackedFloat32Array(0.23, 1)
+"times": PackedFloat32Array(0.43, 1.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enter:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(800, -0.03333333, 33.419678, 0.06666666, -133.7804, 603.5, -0.26666665, 22.56958, 0, 0),
+"times": PackedFloat32Array(0.8, 1.2)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SplashScreen:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.99, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_4t1td"]
@@ -124,6 +170,29 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enter:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SplashScreen:color:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y1dot"]
 _data = {
@@ -131,7 +200,7 @@ _data = {
 &"RESET": SubResource("Animation_4t1td")
 }
 
-[node name="TittleMenu" type="Control" unique_id=2130431488]
+[node name="TittleMenu" type="Control" unique_id=2130431488 node_paths=PackedStringArray("_logo")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,8 +208,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4t1td")
+_logo = NodePath("Logo")
+rotationAmplitude = 0.5
+shakeSpeed = 70.0
 
 [node name="Background" type="TextureRect" parent="." unique_id=383344650]
+self_modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -152,6 +225,7 @@ grow_vertical = 2
 texture = SubResource("AnimatedTexture_vmyal")
 
 [node name="Background2" type="TextureRect" parent="." unique_id=1946085205]
+self_modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -173,7 +247,7 @@ anchor_bottom = 1.0
 offset_left = -195.00002
 offset_top = -720.0
 offset_right = 150.99998
-offset_bottom = -373.99994
+offset_bottom = -373.99982
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("11_v5v8a")
@@ -188,7 +262,7 @@ anchor_bottom = 1.0
 offset_left = -426.00012
 offset_top = -720.0
 offset_right = -43.0
-offset_bottom = -336.99902
+offset_bottom = -336.99832
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
@@ -201,9 +275,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -969.0
+offset_left = -920.0
 offset_top = -360.0
-offset_right = 969.0
+offset_right = 920.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -222,20 +296,51 @@ offset_right = 507.5
 offset_bottom = 220.00061
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(507.5, 290)
 texture = ExtResource("12_xxhgw")
 
-[node name="LogoShake" type="Node" parent="." unique_id=325887429 node_paths=PackedStringArray("_logo")]
-script = ExtResource("17_mxk4f")
-_logo = NodePath("../Logo")
-rotationAmplitude = 1.0
-shakeSpeed = 70.0
+[node name="Enter" type="Button" parent="." unique_id=999096342]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -360.0
+offset_right = 158.0
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_dt7la")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_51cot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7f851")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l2cqw")
+shortcut = SubResource("Shortcut_51cot")
+text = "ENTER"
+
+[node name="SplashScreen" type="ColorRect" parent="." unique_id=988522022]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8509804, 0.8509804, 0.8509804, 0)
+
+[node name="StartPressed" type="Node" parent="." unique_id=258702004 node_paths=PackedStringArray("_startButton")]
+script = ExtResource("20_7f851")
+_startButton = NodePath("../Enter")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288191962]
 libraries/ = SubResource("AnimationLibrary_y1dot")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1235708610]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1235708610]
 stream = ExtResource("16_y1dot")
 autoplay = true
 parameters/looping = true
+
+[node name="EnterSFX" type="AudioStreamPlayer" parent="." unique_id=1253140796]
+stream = ExtResource("20_51cot")

@@ -3,12 +3,16 @@ using System;
 
 public partial class TittleMenu : Control
 {
+    [Export] TextureRect _logo;
+    [Export] float rotationAmplitude = 3f;
+    [Export] float shakeSpeed = 15f;
+
     private LogoShake _logoShake;
     private AnimationPlayer _animationPlayer;
 
     public override void _Ready()
     {
-        _logoShake = GetNode<LogoShake>("LogoShake");
+        _logoShake = new Shake();
         _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 
         _animationPlayer.Play("Entry");
@@ -16,6 +20,6 @@ public partial class TittleMenu : Control
 
     public override void _Process(double delta)
     {
-        _logoShake.Shake(delta);
+        _logoShake.Shaking(_logo, rotationAmplitude, shakeSpeed, (float)delta);
     }
 }

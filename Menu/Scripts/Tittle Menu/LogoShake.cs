@@ -1,18 +1,18 @@
 using Godot;
 using System;
 
-public partial class LogoShake : Node
+public interface LogoShake
 {
-    [Export] TextureRect _logo;
-    [Export] float rotationAmplitude = 3f;
-    [Export] float shakeSpeed = 15f;
+    void Shaking(TextureRect _logo, float rotationAmplitude, float shakeSpeed, float delta);
+}
 
+public class Shake : LogoShake
+{
     float shakeTime = 0f;
-
-    public void Shake(double delta)
+    public void Shaking(TextureRect _logo, float rotationAmplitude, float shakeSpeed, float delta)
     {
-        shakeTime += (float)delta * shakeSpeed;
-        float rotation = Mathf.Sin(shakeTime) * rotationAmplitude;
+        shakeTime += (float)delta * (shakeSpeed >= 0 ? shakeSpeed : 15f);
+        float rotation = Mathf.Sin(shakeTime) * (rotationAmplitude >= 0 ? rotationAmplitude : 3f);
         _logo.RotationDegrees = rotation;
     }
 }
