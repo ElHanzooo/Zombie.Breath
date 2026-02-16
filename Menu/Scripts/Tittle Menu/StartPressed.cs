@@ -7,9 +7,19 @@ public partial class StartPressed : Node
 
     [Export] public Button _startButton;
 
-    public override void _EnterTree()
-    {
-        _startButton.Pressed += () => EmitSignal(SignalName.Starting);
+    private AudioStreamPlayer _SFX;
+
+    public override void _Ready()
+    { 
+        _startButton.Disabled = false;
+        _SFX = GetParent().GetNode<AudioStreamPlayer>("EnterSFX");
+
+        _startButton.Pressed += () => 
+        {
+            _SFX.Play();
+            _startButton.Disabled = true;
+            EmitSignal(SignalName.Starting);
+        };
     }
 
 }
