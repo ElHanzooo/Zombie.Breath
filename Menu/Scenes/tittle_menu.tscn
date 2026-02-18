@@ -15,11 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bpgsxrrhqgxsu" path="res://Menu/Sprites/Tittle Menu/Characters/Mike.png" id="11_v5v8a"]
 [ext_resource type="Texture2D" uid="uid://r1ssnqfxo3fc" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie.png" id="12_4t1td"]
 [ext_resource type="Texture2D" uid="uid://b6d07eklg1ufg" path="res://Menu/Sprites/Tittle Menu/Logo.png" id="12_xxhgw"]
-[ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/ZB menu.mp3" id="16_y1dot"]
+[ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/Tittle Menu/ZB menu.mp3" id="16_y1dot"]
 [ext_resource type="Texture2D" uid="uid://sgskbg2smx3n" path="res://Menu/Sprites/Tittle Menu/Button/ENTER.svg" id="18_dt7la"]
 [ext_resource type="Texture2D" uid="uid://b6ornq1xepkkv" path="res://Menu/Sprites/Tittle Menu/Button/ENTER CLICK.svg" id="19_51cot"]
 [ext_resource type="Script" uid="uid://duxeb768ijwj7" path="res://Menu/Scripts/Tittle Menu/StartPressed.cs" id="20_7f851"]
-[ext_resource type="AudioStream" uid="uid://csg12a5ar22de" path="res://Menu/SFX/start.mp3" id="20_51cot"]
+[ext_resource type="AudioStream" uid="uid://csg12a5ar22de" path="res://Menu/SFX/Tittle Menu/start.mp3" id="20_51cot"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_vmyal"]
 frames = 10
@@ -46,6 +46,7 @@ frame_9/duration = 0.1
 
 [sub_resource type="SystemFont" id="SystemFont_dt7la"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51cot"]
 texture = ExtResource("18_dt7la")
@@ -452,7 +453,7 @@ anchor_bottom = 1.0
 offset_left = -1280.0
 offset_top = -720.0
 offset_right = -896.9999
-offset_bottom = -336.99774
+offset_bottom = -336.9978
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
@@ -483,7 +484,7 @@ anchor_bottom = 0.5
 offset_left = -507.5
 offset_top = -360.0
 offset_right = 507.5
-offset_bottom = 220.00159
+offset_bottom = 220.00146
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)

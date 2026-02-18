@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dt67r64i80gt5"]
+
+[ext_resource type="Texture2D" uid="uid://vinqk1k0w7ug" path="res://Menu/Sprites/Main Menu/Decoration.png" id="1_706j3"]
+[ext_resource type="Texture2D" uid="uid://cfpoqop2kayg6" path="res://Menu/Sprites/Main Menu/Buttons/campaign.png" id="2_lf5lq"]
+[ext_resource type="Texture2D" uid="uid://bla1e0o2b6w6s" path="res://Menu/Sprites/Main Menu/Buttons/campaign_selected.png" id="3_2snn4"]
+[ext_resource type="Texture2D" uid="uid://b7ge1a5gmyrjn" path="res://Menu/Sprites/Main Menu/Buttons/migigames.png" id="4_uq1xs"]
+[ext_resource type="Texture2D" uid="uid://h321qwlj38ge" path="res://Menu/Sprites/Main Menu/Buttons/minigames_selected.png" id="5_vqa26"]
+[ext_resource type="Texture2D" uid="uid://qtmj1v5a15lt" path="res://Menu/Sprites/Main Menu/Buttons/savefiles.png" id="6_180m6"]
+[ext_resource type="Texture2D" uid="uid://er3qmc3353oq" path="res://Menu/Sprites/Main Menu/Buttons/savefiles_selected.png" id="7_5irco"]
+[ext_resource type="Texture2D" uid="uid://d2k1y4xc6koik" path="res://Menu/Sprites/Main Menu/Buttons/trophies.png" id="8_s5pnb"]
+[ext_resource type="Texture2D" uid="uid://cgtt2nqfl4bd6" path="res://Menu/Sprites/Main Menu/Buttons/trophies_selected.png" id="9_odjf2"]
+[ext_resource type="Texture2D" uid="uid://bb23sfy1bh4g0" path="res://Menu/Sprites/Main Menu/Buttons/options.png" id="10_lf5lq"]
+
+[node name="MainMenu" type="Control" unique_id=941986680]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backgroung" type="ColorRect" parent="." unique_id=1149106158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="Decoration" type="TextureRect" parent="." unique_id=891675891]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -364.0
+offset_right = 1032.0
+offset_bottom = 364.0
+grow_vertical = 2
+texture = ExtResource("1_706j3")
+
+[node name="ButtonsHandler" type="Control" parent="." unique_id=1383450689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsHandler" unique_id=1284550483]
+layout_mode = 1
+offset_left = -32.0
+offset_top = 49.5
+offset_right = 373.0
+offset_bottom = 670.5
+theme_override_constants/separation = 30
+
+[node name="Campaign" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=282357352]
+layout_mode = 2
+texture_normal = ExtResource("2_lf5lq")
+texture_pressed = ExtResource("3_2snn4")
+texture_hover = ExtResource("3_2snn4")
+texture_disabled = ExtResource("2_lf5lq")
+stretch_mode = 3
+
+[node name="Minigames" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=189063826]
+layout_mode = 2
+texture_normal = ExtResource("4_uq1xs")
+texture_pressed = ExtResource("5_vqa26")
+texture_hover = ExtResource("5_vqa26")
+texture_disabled = ExtResource("4_uq1xs")
+stretch_mode = 3
+
+[node name="Savefiles" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1109636927]
+layout_mode = 2
+texture_normal = ExtResource("6_180m6")
+texture_pressed = ExtResource("7_5irco")
+texture_hover = ExtResource("7_5irco")
+texture_disabled = ExtResource("6_180m6")
+stretch_mode = 3
+
+[node name="Trophies" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1536847389]
+layout_mode = 2
+texture_normal = ExtResource("8_s5pnb")
+texture_pressed = ExtResource("9_odjf2")
+texture_hover = ExtResource("9_odjf2")
+texture_disabled = ExtResource("8_s5pnb")
+stretch_mode = 3
+
+[node name="Options" type="TextureButton" parent="ButtonsHandler" unique_id=1820021770]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -131.0
+offset_top = 15.0
+offset_right = 180.0
+offset_bottom = 319.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("10_lf5lq")
+texture_pressed = ExtResource("10_lf5lq")
+texture_hover = ExtResource("10_lf5lq")
+texture_disabled = ExtResource("10_lf5lq")
+
+[node name="Label" type="Label" parent="." unique_id=1113153857]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
