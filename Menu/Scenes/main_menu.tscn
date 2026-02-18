@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://vinqk1k0w7ug" path="res://Menu/Sprites/Main Menu/Decoration.png" id="1_706j3"]
 [ext_resource type="Texture2D" uid="uid://cfpoqop2kayg6" path="res://Menu/Sprites/Main Menu/Buttons/campaign.png" id="2_lf5lq"]
 [ext_resource type="Texture2D" uid="uid://bla1e0o2b6w6s" path="res://Menu/Sprites/Main Menu/Buttons/campaign_selected.png" id="3_2snn4"]
+[ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/Main Menu/ButtonAnimation.cs" id="4_2snn4"]
 [ext_resource type="Texture2D" uid="uid://b7ge1a5gmyrjn" path="res://Menu/Sprites/Main Menu/Buttons/migigames.png" id="4_uq1xs"]
 [ext_resource type="Texture2D" uid="uid://h321qwlj38ge" path="res://Menu/Sprites/Main Menu/Buttons/minigames_selected.png" id="5_vqa26"]
 [ext_resource type="Texture2D" uid="uid://qtmj1v5a15lt" path="res://Menu/Sprites/Main Menu/Buttons/savefiles.png" id="6_180m6"]
@@ -49,10 +50,14 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ButtonsHandler" unique_id=1284550483]
 layout_mode = 1
-offset_left = -32.0
-offset_top = 49.5
-offset_right = 373.0
-offset_bottom = 670.5
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -310.5
+offset_right = 375.0
+offset_bottom = 310.5
+grow_vertical = 2
 theme_override_constants/separation = 30
 
 [node name="Campaign" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=282357352]
@@ -62,6 +67,7 @@ texture_pressed = ExtResource("3_2snn4")
 texture_hover = ExtResource("3_2snn4")
 texture_disabled = ExtResource("2_lf5lq")
 stretch_mode = 3
+script = ExtResource("4_2snn4")
 
 [node name="Minigames" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=189063826]
 layout_mode = 2
@@ -70,6 +76,7 @@ texture_pressed = ExtResource("5_vqa26")
 texture_hover = ExtResource("5_vqa26")
 texture_disabled = ExtResource("4_uq1xs")
 stretch_mode = 3
+script = ExtResource("4_2snn4")
 
 [node name="Savefiles" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1109636927]
 layout_mode = 2
@@ -78,6 +85,7 @@ texture_pressed = ExtResource("7_5irco")
 texture_hover = ExtResource("7_5irco")
 texture_disabled = ExtResource("6_180m6")
 stretch_mode = 3
+script = ExtResource("4_2snn4")
 
 [node name="Trophies" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1536847389]
 layout_mode = 2
@@ -86,6 +94,7 @@ texture_pressed = ExtResource("9_odjf2")
 texture_hover = ExtResource("9_odjf2")
 texture_disabled = ExtResource("8_s5pnb")
 stretch_mode = 3
+script = ExtResource("4_2snn4")
 
 [node name="Options" type="TextureButton" parent="ButtonsHandler" unique_id=1820021770]
 layout_mode = 1
