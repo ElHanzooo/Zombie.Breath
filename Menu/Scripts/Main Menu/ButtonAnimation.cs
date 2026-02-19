@@ -18,13 +18,17 @@ public partial class ButtonAnimation : TextureButton
     {
         _tween?.Kill();
         _tween = GetTree().CreateTween();
-        _tween.TweenProperty(this, "position:x", displacement, animationDuration).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.Out);
+        _tween.TweenProperty(this, "position:x", displacement, animationDuration)
+              .SetTrans(Tween.TransitionType.Cubic)
+              .SetEase(Tween.EaseType.Out);
     }
 
     public void OnMouseExited()
     {
         _tween?.Kill();
         _tween = GetTree().CreateTween();
-        _tween.TweenProperty(this, "position:x", 0f, animationDuration).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.Out);
+        _tween.TweenProperty(this, "position:x", 0f, animationDuration)
+              .SetTrans(Tween.TransitionType.Cubic)
+              .SetEase(Tween.EaseType.Out);
     }
 }
