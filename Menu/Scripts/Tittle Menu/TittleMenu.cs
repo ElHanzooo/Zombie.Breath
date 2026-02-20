@@ -3,9 +3,9 @@ using System;
 
 public partial class TittleMenu : Control
 {
-    [Export] TextureRect _logo;
-    [Export] float rotationAmplitude = 3f;
-    [Export] float shakeSpeed = 15f;
+    [Export] public TextureRect _logo;
+    [Export] public float rotationAmplitude = 3f;
+    [Export] public float shakeSpeed = 15f;
 
     private LogoShake _logoShake;
     private StartPressed _startPressed;
@@ -21,10 +21,20 @@ public partial class TittleMenu : Control
         _animationPlayer.Play("Entry");
 
         _startPressed.Starting += () => _animationPlayer.Play("Exit");
+
+        _animationPlayer.AnimationFinished += OnAnimationFinished;
     }
 
     public override void _Process(double delta)
     {
         _logoShake.Shaking(_logo, rotationAmplitude, shakeSpeed, (float)delta);
+    }
+
+    private void OnAnimationFinished(StringName animName)
+    {
+        if (animName == "Exit")
+        {
+            SceneChanger.Instance.ChangeScene("res://Menu/Scenes/main_menu.tscn");
+        }
     }
 }

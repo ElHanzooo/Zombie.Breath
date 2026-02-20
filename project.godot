@@ -13,6 +13,10 @@ config_version=5
 config/name="Zombie Breath"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 
+[autoload]
+
+SceneTransition="*uid://rlaxk47h2y07"
+
 [display]
 
 window/size/viewport_width=1280
