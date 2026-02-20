@@ -10,10 +10,19 @@ public partial class ButtonsHandler : Control
         var buttons = GetTree().GetNodesInGroup("MenuButtons");
         foreach (var node in buttons)
         {
-            if (node is TextureButton button)
+            if (node is GenericUIAnimation button)
             {
-                button.MouseEntered += () => UpdateLabel(button.GetMeta("Description").AsString());
-                button.MouseExited += () => UpdateLabel(String.Empty);
+                button.MouseEntered += () => 
+                {
+                    UpdateLabel(button.GetMeta("Description").AsString());
+                    button.OnMouseEntered();
+                };
+                
+                button.MouseExited += () => 
+                {
+                    UpdateLabel(String.Empty);
+                    button.OnMouseExited();
+                };
             }
         }
     }
