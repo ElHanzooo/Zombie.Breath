@@ -4,6 +4,8 @@ using Godot.Collections;
 
 public partial class GenericUIAnimation : Control
 {
+    [Signal] public delegate void PressedEventHandler();
+
     [ExportGroup("Animation Configuration")]
     [Export] public float Duration = 0.2f;
     [Export] public Tween.TransitionType Transition = Tween.TransitionType.Cubic;
@@ -17,6 +19,16 @@ public partial class GenericUIAnimation : Control
     [Export] public Dictionary<string, Variant> DefaultValues = new Dictionary<string, Variant>();
 
     private Tween _tween;
+
+    public override void _GuiInput(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton mouseEvent && 
+            mouseEvent.ButtonIndex == MouseButton.Left && 
+            mouseEvent.Pressed)
+        {
+            EmitSignal(SignalName.Pressed);
+        }
+    }
 
     public void OnMouseEntered() => AnimateTo(HoverValues);
     public void OnMouseExited() => AnimateTo(DefaultValues);
