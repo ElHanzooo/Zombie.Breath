@@ -3,31 +3,37 @@ using System;
 
 public partial class TittleMenu : Control
 {
-    [Export] public TextureRect _logo;
-    [Export] public float rotationAmplitude = 3f;
-    [Export] public float shakeSpeed = 15f;
+    [Export] private TextureRect _logo;
+    [Export] private float rotationAmplitude = 3f;
+    [Export] private float shakeSpeed = 15f;
 
-    private LogoShake _logoShake;
-    private StartPressed _startPressed;
+    private IControlEffect _logoShake;
 
+    private StartPressed _startLogic;
     private AnimationPlayer _animationPlayer;
+    private AudioStreamPlayer _sfx;
 
     public override void _Ready()
     {
-        _logoShake = new Shake();
         _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        _startPressed = GetNode<StartPressed>("StartPressed");
+        _startLogic = GetNode<StartPressed>("StartPressed");
+        _sfx = GetNode<AudioStreamPlayer>("EnterSFX");
 
-        _animationPlayer.Play("Entry");
+        _logoShake = new ShakeEffect(rotationAmplitude, shakeSpeed);
 
-        _startPressed.Starting += () => _animationPlayer.Play("Exit");
-
+        _startLogic.Starting += HandleStartPressed;
         _animationPlayer.AnimationFinished += OnAnimationFinished;
     }
 
     public override void _Process(double delta)
     {
-        _logoShake.Shaking(_logo, rotationAmplitude, shakeSpeed, (float)delta);
+        _logoShake?.Apply(_logo, (float)delta);
+    }
+
+    private void HandleStartPressed()
+    {
+        _sfx?.Play();
+        _animationPlayer.Play("Exit");
     }
 
     private void OnAnimationFinished(StringName animName)

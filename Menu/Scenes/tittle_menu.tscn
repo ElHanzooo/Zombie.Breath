@@ -64,8 +64,12 @@ texture = ExtResource("19_51cot")
 device = -1
 keycode = 4194309
 
+[sub_resource type="InputEventKey" id="InputEventKey_51cot"]
+device = -1
+keycode = 4194310
+
 [sub_resource type="Shortcut" id="Shortcut_51cot"]
-events = [SubResource("InputEventKey_dt7la")]
+events = [SubResource("InputEventKey_dt7la"), SubResource("InputEventKey_51cot")]
 
 [sub_resource type="Animation" id="Animation_v5v8a"]
 resource_name = "Entry"
@@ -453,7 +457,7 @@ anchor_bottom = 1.0
 offset_left = -1280.0
 offset_top = -720.0
 offset_right = -896.9999
-offset_bottom = -336.99762
+offset_bottom = -336.99756
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
@@ -528,6 +532,7 @@ _startButton = NodePath("../Enter")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288191962]
 libraries/ = SubResource("AnimationLibrary_y1dot")
+autoplay = &"Entry"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1235708610]
 stream = ExtResource("16_y1dot")

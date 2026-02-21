@@ -5,21 +5,20 @@ public partial class StartPressed : Node
 {
     [Signal] public delegate void StartingEventHandler();
 
-    [Export] public Button _startButton;
-
-    private AudioStreamPlayer _SFX;
+    [Export] private Button _startButton;
 
     public override void _Ready()
     { 
-        _startButton.Disabled = false;
-        _SFX = GetParent().GetNode<AudioStreamPlayer>("EnterSFX");
+        if (_startButton == null) return;
 
-        _startButton.Pressed += () => 
-        {
-            _SFX.Play();
-            _startButton.Disabled = true;
-            EmitSignal(SignalName.Starting);
-        };
+        _startButton.Disabled = false;
+
+        _startButton.Pressed += OnButtonPressed;
     }
 
+    private void OnButtonPressed()
+    {
+        _startButton.Disabled = true;
+        EmitSignal(SignalName.Starting);
+    }
 }
