@@ -15,11 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bpgsxrrhqgxsu" path="res://Menu/Sprites/Tittle Menu/Characters/Mike.png" id="11_v5v8a"]
 [ext_resource type="Texture2D" uid="uid://r1ssnqfxo3fc" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie.png" id="12_4t1td"]
 [ext_resource type="Texture2D" uid="uid://b6d07eklg1ufg" path="res://Menu/Sprites/Tittle Menu/Logo.png" id="12_xxhgw"]
-[ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/Tittle Menu/ZB menu.mp3" id="16_y1dot"]
 [ext_resource type="Texture2D" uid="uid://sgskbg2smx3n" path="res://Menu/Sprites/Tittle Menu/Button/ENTER.svg" id="18_dt7la"]
 [ext_resource type="Texture2D" uid="uid://b6ornq1xepkkv" path="res://Menu/Sprites/Tittle Menu/Button/ENTER CLICK.svg" id="19_51cot"]
+[ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="19_dt7la"]
 [ext_resource type="Script" uid="uid://duxeb768ijwj7" path="res://Menu/Scripts/Tittle Menu/StartPressed.cs" id="20_7f851"]
-[ext_resource type="AudioStream" uid="uid://csg12a5ar22de" path="res://Menu/SFX/Tittle Menu/start.mp3" id="20_51cot"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_vmyal"]
 frames = 10
@@ -534,10 +533,5 @@ _startButton = NodePath("../Enter")
 libraries/ = SubResource("AnimationLibrary_y1dot")
 autoplay = &"Entry"
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1235708610]
-stream = ExtResource("16_y1dot")
-autoplay = true
-parameters/looping = true
-
 [node name="EnterSFX" type="AudioStreamPlayer" parent="." unique_id=1253140796]
-stream = ExtResource("20_51cot")
+stream = ExtResource("19_dt7la")

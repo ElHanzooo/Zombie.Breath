@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwdgmonw5g02n"]
+
+[ext_resource type="AudioStream" uid="uid://w3dyu1m1l6a8" path="res://Menu/Musics/ZB menu.mp3" id="1_b54ht"]
+[ext_resource type="Script" uid="uid://bn1ca7rfws6i7" path="res://Menu/Scripts/General/MenuMusicPlayer.cs" id="2_wkw2y"]
+
+[node name="MenuMusicPlayer" type="AudioStreamPlayer" unique_id=592448170]
+stream = ExtResource("1_b54ht")
+volume_db = -3.0
+parameters/looping = true
+script = ExtResource("2_wkw2y")

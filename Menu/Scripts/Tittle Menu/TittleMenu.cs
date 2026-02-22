@@ -15,6 +15,8 @@ public partial class TittleMenu : Control
 
     public override void _Ready()
     {
+        MenuMusicPlayer.Instance.PlayMusic();
+
         _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _startLogic = GetNode<StartPressed>("StartPressed");
         _sfx = GetNode<AudioStreamPlayer>("EnterSFX");

@@ -46,16 +46,6 @@
 [ext_resource type="Script" uid="uid://beot2urrjl252" path="res://Menu/Scripts/Main Menu/Buttons Actions/TrophiesAction.cs" id="40_vw3fn"]
 [ext_resource type="Script" uid="uid://bjdj2in16iled" path="res://Menu/Scripts/Main Menu/Buttons Actions/OptionsAction.cs" id="42_ug7od"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_54ljp"]
-frames = 3
-speed_scale = 1.3
-frame_0/texture = ExtResource("1_wtvu0")
-frame_0/duration = 0.15
-frame_1/texture = ExtResource("2_dkqay")
-frame_1/duration = 0.15
-frame_2/texture = ExtResource("3_oecam")
-frame_2/duration = 0.15
-
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ra7ut"]
 frames = 20
 speed_scale = 1.3
@@ -100,6 +90,16 @@ frame_18/duration = 0.15
 frame_19/texture = ExtResource("12_obnb7")
 frame_19/duration = 0.15
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_54ljp"]
+frames = 3
+speed_scale = 1.3
+frame_0/texture = ExtResource("1_wtvu0")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("2_dkqay")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("3_oecam")
+frame_2/duration = 0.15
+
 [sub_resource type="Animation" id="Animation_54ljp"]
 resource_name = "Boat"
 length = 4.0
@@ -114,7 +114,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1000.0, 620.0]
+"values": [1000.0, 920.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -123,10 +123,10 @@ tracks/1/path = NodePath("Boat:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.5, 1.5, 2.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0, -0.08726646259971647]
+"values": [0.06981317007977318, -0.06981317007977318, 0.06981317007977318, -0.06981317007977318]
 }
 
 [sub_resource type="Animation" id="Animation_3fahj"]
@@ -187,22 +187,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_dkqay")
 
-[node name="Boat" type="TextureRect" parent="Background" unique_id=1779726421]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 244.2915
-offset_top = 128.0
-offset_right = 366.29236
-offset_bottom = 207.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(61, 65)
-texture = SubResource("AnimatedTexture_54ljp")
-
 [node name="Ocean" type="TextureRect" parent="Background" unique_id=115071650]
 layout_mode = 1
 anchors_preset = 3
@@ -215,6 +199,22 @@ offset_top = -580.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = SubResource("AnimatedTexture_ra7ut")
+
+[node name="Boat" type="TextureRect" parent="Background" unique_id=1779726421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.2915
+offset_top = 178.0
+offset_right = 366.2915
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(61, 65)
+texture = SubResource("AnimatedTexture_54ljp")
 
 [node name="Sun" type="TextureRect" parent="Background" unique_id=406445863]
 layout_mode = 1

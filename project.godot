@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 [autoload]
 
 SceneTransition="*uid://rlaxk47h2y07"
+MenuMusicPlayer="*uid://cwdgmonw5g02n"
 
 [display]
 
