@@ -24,12 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://er3qmc3353oq" path="res://Menu/Sprites/Main Menu/Buttons/savefiles_selected.png" id="7_5irco"]
 [ext_resource type="Texture2D" uid="uid://orhy0jibdkdo" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_14.png" id="7_oecam"]
 [ext_resource type="Texture2D" uid="uid://p7aysk1y3en3" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_15.png" id="8_54ljp"]
+[ext_resource type="Texture2D" uid="uid://vrfwhxb6ft1r" path="res://Menu/Sprites/Main Menu/Background/Clouds/cloud1.svg" id="8_81ftc"]
 [ext_resource type="Texture2D" uid="uid://d2k1y4xc6koik" path="res://Menu/Sprites/Main Menu/Buttons/trophies.png" id="8_s5pnb"]
 [ext_resource type="Texture2D" uid="uid://yphryfa7lt86" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_16.png" id="9_3fahj"]
+[ext_resource type="Script" uid="uid://cp4b8n0rrckhs" path="res://Menu/Scripts/Main Menu/Cloud.cs" id="9_n3mha"]
 [ext_resource type="Texture2D" uid="uid://cgtt2nqfl4bd6" path="res://Menu/Sprites/Main Menu/Buttons/trophies_selected.png" id="9_odjf2"]
+[ext_resource type="Texture2D" uid="uid://bnqtqwcntpsao" path="res://Menu/Sprites/Main Menu/Background/Clouds/cloud2.svg" id="10_acc5a"]
 [ext_resource type="Texture2D" uid="uid://bb23sfy1bh4g0" path="res://Menu/Sprites/Main Menu/Buttons/options.png" id="10_lf5lq"]
 [ext_resource type="Texture2D" uid="uid://cg0bsnwrnwfv4" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_17.png" id="10_xawwi"]
 [ext_resource type="Texture2D" uid="uid://nwlbet2dxbff" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_18.png" id="11_7gt5c"]
+[ext_resource type="Texture2D" uid="uid://b4q455bwsgpc1" path="res://Menu/Sprites/Main Menu/Background/Clouds/cloud3.svg" id="11_u01t2"]
 [ext_resource type="Texture2D" uid="uid://uxdgfifuun" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_19.png" id="12_obnb7"]
 [ext_resource type="Texture2D" uid="uid://bdqmkuif5v4fl" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_2.png" id="13_e3j4t"]
 [ext_resource type="Texture2D" uid="uid://u7xbwwbsvmh8" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_3.png" id="14_aidj4"]
@@ -107,7 +111,7 @@ frame_2/duration = 0.15
 
 [sub_resource type="Animation" id="Animation_54ljp"]
 resource_name = "Boat"
-length = 4.0
+length = 8.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -116,7 +120,7 @@ tracks/0/path = NodePath("Modulate/Boat:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1000.0, 920.0]
@@ -128,7 +132,7 @@ tracks/1/path = NodePath("Modulate/Boat:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 1.5, 2.5, 3.5),
+"times": PackedFloat32Array(1, 3, 5, 7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.06981317007977318, -0.06981317007977318, 0.06981317007977318, -0.06981317007977318]
@@ -160,11 +164,60 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Modulate/Cloud:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-2.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xawwi"]
 _data = {
 &"Boat": SubResource("Animation_54ljp"),
 &"RESET": SubResource("Animation_3fahj")
+}
+
+[sub_resource type="Animation" id="Animation_acc5a"]
+resource_name = "Cloud"
+length = 32.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modulate/Cloud:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1300.0]
+}
+
+[sub_resource type="Animation" id="Animation_u01t2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modulate/Cloud:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58u2v"]
+_data = {
+&"Cloud": SubResource("Animation_acc5a"),
+&"RESET": SubResource("Animation_u01t2")
 }
 
 [node name="MainMenu" type="Control" unique_id=941986680 node_paths=PackedStringArray("BackgroundHandler")]
@@ -291,6 +344,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Cloud" type="TextureRect" parent="Background/Modulate" unique_id=506436147 node_paths=PackedStringArray("animationPlayer")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -283.0
+offset_right = 267.00806
+offset_bottom = 401.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_81ftc")
+script = ExtResource("9_n3mha")
+animationPlayer = NodePath("../../AnimationPlayerCloud")
+cloudTextures = Array[Texture2D]([ExtResource("8_81ftc"), ExtResource("10_acc5a"), ExtResource("11_u01t2")])
+
 [node name="Ocean" type="TextureRect" parent="Background/Modulate" unique_id=115071650]
 layout_mode = 1
 anchors_preset = 3
@@ -313,7 +385,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 244.2915
 offset_top = 178.0
-offset_right = 366.29346
+offset_right = 366.2926
 offset_bottom = 257.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -323,7 +395,10 @@ texture = SubResource("AnimatedTexture_54ljp")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background" unique_id=1648673757]
 libraries/ = SubResource("AnimationLibrary_xawwi")
 autoplay = &"Boat"
-speed_scale = 0.5
+
+[node name="AnimationPlayerCloud" type="AnimationPlayer" parent="Background" unique_id=292857428]
+libraries/ = SubResource("AnimationLibrary_58u2v")
+autoplay = &"Cloud"
 
 [node name="Decoration" type="TextureRect" parent="." unique_id=891675891]
 layout_mode = 1

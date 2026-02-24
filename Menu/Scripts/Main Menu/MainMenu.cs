@@ -7,6 +7,7 @@ public partial class MainMenu : Control
 
     public override void _Ready()
     {
+        MenuMusicPlayer.Instance.PlayMusic();
         BackgroundHandler.UpdateBackground();
     }
 }
