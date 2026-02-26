@@ -27,7 +27,7 @@ window/stretch/mode="canvas_items"
 
 [dotnet]
 
-project/assembly_name="Game"
+project/assembly_name="Zombie Breath"
 
 [physics]
 
