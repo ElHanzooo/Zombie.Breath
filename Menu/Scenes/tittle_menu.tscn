@@ -70,6 +70,60 @@ keycode = 4194310
 [sub_resource type="Shortcut" id="Shortcut_51cot"]
 events = [SubResource("InputEventKey_dt7la"), SubResource("InputEventKey_51cot")]
 
+[sub_resource type="Animation" id="Animation_dt7la"]
+resource_name = "CBottom"
+length = 1.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(717, -0.25, 0, 0.4666667, 6.6174927, 71, -0.56666666, 31.950905, 0, 0),
+"times": PackedFloat32Array(0.43, 1.2)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [854.0]
+}
+
+[sub_resource type="Animation" id="Animation_7f851"]
+resource_name = "CRight"
+length = 1.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1247, -0.25, 0, 0.26999998, -2.7833252, 854, -0.40000004, 12.803589, 0, 0),
+"times": PackedFloat32Array(0.43, 1.2)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [71.0]
+}
+
 [sub_resource type="Animation" id="Animation_v5v8a"]
 resource_name = "Entry"
 length = 1.2
@@ -98,72 +152,49 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Character:position:y")
+tracks/2/path = NodePath("Enter:position:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(717, -0.25, 0, 0.4666667, 6.6174927, 71, -0.56666666, 31.950905, 0, 0),
-"times": PackedFloat32Array(0.43, 1.2)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Enter:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(800, -0.03333333, 33.419678, 0.06666666, -133.7804, 603.5, -0.26666665, 22.56958, 0, 0),
 "times": PackedFloat32Array(0.8, 1.2)
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("White:color:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("White:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.99, 0.0]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Logo:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Logo:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.6, 0.6)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Mike:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mike:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [-195.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Character:position:x")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [854.0]
 }
 
 [sub_resource type="Animation" id="Animation_51cot"]
@@ -271,7 +302,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(580, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -282,7 +313,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(719, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -293,7 +324,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(717, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "value"
@@ -316,7 +347,7 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(800, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/5/type = "value"
@@ -339,7 +370,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/7/type = "bezier"
@@ -350,7 +381,7 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/8/type = "bezier"
@@ -361,7 +392,7 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-195, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/9/type = "bezier"
@@ -372,7 +403,7 @@ tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(854, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/10/type = "value"
@@ -390,12 +421,82 @@ tracks/10/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y1dot"]
 _data = {
+&"CBottom": SubResource("Animation_dt7la"),
+&"CRight": SubResource("Animation_7f851"),
 &"Entry": SubResource("Animation_v5v8a"),
 &"Exit": SubResource("Animation_51cot"),
 &"RESET": SubResource("Animation_4t1td")
 }
 
-[node name="TittleMenu" type="Control" unique_id=2130431488 node_paths=PackedStringArray("_logo")]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_dt7la"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_51cot"]
+animation = &"CBottom"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7f851"]
+animation = &"Entry"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_l2cqw"]
+graph_offset = Vector2(-326.56744, -82.56329)
+nodes/output/position = Vector2(300, 140)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_dt7la")
+nodes/Add2/position = Vector2(120, 100)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_7f851")
+nodes/Animation/position = Vector2(-40, 60)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_51cot")
+"nodes/Animation 2/position" = Vector2(-40, 240)
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_51cot"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i78tc"]
+animation = &"CRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l2cqw"]
+animation = &"Entry"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_i78tc"]
+graph_offset = Vector2(-135.28476, 23.455812)
+nodes/output/position = Vector2(500, 180)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_51cot")
+nodes/Add2/position = Vector2(320, 140)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_l2cqw")
+nodes/Animation/position = Vector2(160, 100)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_i78tc")
+"nodes/Animation 2/position" = Vector2(160, 280)
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ssyll"]
+animation = &"Exit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4kjr2"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ofovc"]
+advance_mode = 2
+advance_condition = &"CRight"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8upf4"]
+advance_mode = 2
+advance_condition = &"Exit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1x8q0"]
+advance_mode = 2
+advance_condition = &"CBottom"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sd217"]
+states/EntryCBottom/node = SubResource("AnimationNodeBlendTree_l2cqw")
+states/EntryCBottom/position = Vector2(484, 20.922546)
+states/EntryCRight/node = SubResource("AnimationNodeBlendTree_i78tc")
+states/EntryCRight/position = Vector2(484, 100)
+states/Exit/node = SubResource("AnimationNodeAnimation_ssyll")
+states/Exit/position = Vector2(484, 183.92255)
+states/RESET/node = SubResource("AnimationNodeAnimation_4kjr2")
+states/RESET/position = Vector2(331, 100)
+transitions = ["RESET", "EntryCRight", SubResource("AnimationNodeStateMachineTransition_ofovc"), "RESET", "Exit", SubResource("AnimationNodeStateMachineTransition_8upf4"), "RESET", "EntryCBottom", SubResource("AnimationNodeStateMachineTransition_1x8q0")]
+graph_offset = Vector2(0, -17.788748)
+
+[node name="TittleMenu" type="Control" unique_id=2130431488 node_paths=PackedStringArray("_logo", "_ButtonSFX", "_startLogic", "_animationTree")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -406,6 +507,9 @@ script = ExtResource("1_4t1td")
 _logo = NodePath("Logo")
 rotationAmplitude = 0.5
 shakeSpeed = 70.0
+_ButtonSFX = NodePath("EnterSFX")
+_startLogic = NodePath("StartPressed")
+_animationTree = NodePath("AnimationTree")
 
 [node name="Background" type="TextureRect" parent="." unique_id=383344650]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
@@ -439,9 +543,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -720.0
-offset_right = 346.0
-offset_bottom = -374.0
+offset_left = -195.0
+offset_top = -1.0
+offset_right = 151.0
+offset_bottom = 345.00024
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("11_v5v8a")
@@ -453,10 +558,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1280.0
-offset_top = -720.0
-offset_right = -896.9999
-offset_bottom = -336.99756
+offset_left = -426.0
+offset_top = -3.0
+offset_right = -43.0
+offset_bottom = 380.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
@@ -485,9 +590,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -507.5
-offset_top = -360.0
+offset_top = 220.0
 offset_right = 507.5
-offset_bottom = 220.00146
+offset_bottom = 800.0017
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
@@ -502,9 +607,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -158.0
-offset_top = -360.0
+offset_top = 440.0
 offset_right = 158.0
-offset_bottom = -285.0
+offset_bottom = 515.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("SystemFont_dt7la")
@@ -531,7 +636,15 @@ _startButton = NodePath("../Enter")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=288191962]
 libraries/ = SubResource("AnimationLibrary_y1dot")
-autoplay = &"Entry"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1523214681]
+tree_root = SubResource("AnimationNodeStateMachine_sd217")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/CBottom = false
+parameters/conditions/CRight = false
+parameters/conditions/Exit = false
+parameters/EntryCBottom/Add2/add_amount = 1.0
+parameters/EntryCRight/Add2/add_amount = 1.0
 
 [node name="EnterSFX" type="AudioStreamPlayer" parent="." unique_id=1253140796]
 stream = ExtResource("19_dt7la")
