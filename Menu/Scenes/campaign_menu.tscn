@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://h5cp45c654ot"]
 
+[ext_resource type="Script" uid="uid://bcuxwfjqbi7qh" path="res://Menu/Scripts/Campaign Menu/CampaignMenu.cs" id="1_kfl7n"]
 [ext_resource type="Texture2D" uid="uid://bejgd7ftbxc4s" path="res://Menu/Sprites/Tittle Menu/Background/4.png" id="1_t4cvq"]
 [ext_resource type="Texture2D" uid="uid://c6dikidbi5ift" path="res://Menu/Sprites/Tittle Menu/Background/6.png" id="2_s2dgl"]
 [ext_resource type="Texture2D" uid="uid://bg1ftv7ydfvuf" path="res://Menu/Sprites/Tittle Menu/Background/10.png" id="3_5y58b"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bsmgbwegu0o50" path="res://Menu/Sprites/Campaign Menu/Mike/redmike3.svg" id="14_c0skb"]
 [ext_resource type="Texture2D" uid="uid://bwpnt0ikq1p6s" path="res://Menu/Sprites/Campaign Menu/Mike/redmike4.svg" id="15_ckrgn"]
 [ext_resource type="Texture2D" uid="uid://dl7jvbrdpyuek" path="res://Menu/Sprites/Campaign Menu/black.svg" id="18_hgrub"]
+[ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="20_4yfre"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_kjfl6"]
 frames = 10
@@ -143,13 +145,15 @@ _data = {
 &"RESET": SubResource("Animation_kfl7n")
 }
 
-[node name="CampaignMenu" type="Control" unique_id=862469573]
+[node name="CampaignMenu" type="Control" unique_id=862469573 node_paths=PackedStringArray("_AnimationPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kfl7n")
+_AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1607075361]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
@@ -240,6 +244,43 @@ mouse_filter = 2
 texture = ExtResource("18_hgrub")
 flip_h = true
 flip_v = true
+
+[node name="Label" type="Label" parent="." unique_id=1376063714]
+modulate = Color(0.7882353, 0.30980393, 0.43529412, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -110.0
+offset_right = 197.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("20_4yfre")
+theme_override_font_sizes/font_size = 48
+text = "Press ENTER to start."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=64285603]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -50.0
+offset_right = 143.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("20_4yfre")
+theme_override_font_sizes/font_size = 26
+text = "Press BACKSPACE to return."
+horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1722704902]
 libraries/ = SubResource("AnimationLibrary_4yfre")
