@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rlaxk47h2y07"]
 
-[ext_resource type="Script" uid="uid://fj2n6p6t4q1d" path="res://Menu/Scripts/Scene Transition/SceneChanger.cs" id="1_u6dyr"]
-[ext_resource type="Script" uid="uid://dct6ycy57x0o" path="res://Menu/Scripts/Scene Transition/FadeEffect.cs" id="2_gh8xu"]
+[ext_resource type="Script" uid="uid://fj2n6p6t4q1d" path="res://Menu/Scripts/Global/Scene Transition/SceneChanger.cs" id="1_u6dyr"]
+[ext_resource type="Script" uid="uid://dct6ycy57x0o" path="res://Menu/Scripts/Global/Scene Transition/FadeEffect.cs" id="2_gh8xu"]
 
 [node name="SceneTransition" type="CanvasLayer" unique_id=782101248 node_paths=PackedStringArray("_transitionNode")]
 process_mode = 3

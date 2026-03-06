@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://bpgsxrrhqgxsu" path="res://Menu/Sprites/Tittle Menu/Characters/Mike.png" id="11_v5v8a"]
 [ext_resource type="Texture2D" uid="uid://r1ssnqfxo3fc" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie.png" id="12_4t1td"]
 [ext_resource type="Texture2D" uid="uid://b6d07eklg1ufg" path="res://Menu/Sprites/Tittle Menu/Logo.png" id="12_xxhgw"]
+[ext_resource type="Script" uid="uid://dm24diag38h3q" path="res://Menu/Scripts/Tittle Menu/Character.cs" id="14_i78tc"]
+[ext_resource type="Texture2D" uid="uid://dvbs7qjh2bxj3" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie Bungee.png" id="15_ssyll"]
+[ext_resource type="Texture2D" uid="uid://ydyajv6ob6x3" path="res://Menu/Sprites/Tittle Menu/Characters/Skeleton.png" id="16_4kjr2"]
 [ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="16_51cot"]
 [ext_resource type="Texture2D" uid="uid://sgskbg2smx3n" path="res://Menu/Sprites/Tittle Menu/Button/ENTER.svg" id="18_dt7la"]
 [ext_resource type="Texture2D" uid="uid://b6ornq1xepkkv" path="res://Menu/Sprites/Tittle Menu/Button/ENTER CLICK.svg" id="19_51cot"]
@@ -457,18 +460,6 @@ animation = &"Exit"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4kjr2"]
 animation = &"RESET"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ofovc"]
-advance_mode = 2
-advance_condition = &"CRight"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8upf4"]
-advance_mode = 2
-advance_condition = &"Exit"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1x8q0"]
-advance_mode = 2
-advance_condition = &"CBottom"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sd217"]
 states/EntryCBottom/node = SubResource("AnimationNodeBlendTree_l2cqw")
 states/EntryCBottom/position = Vector2(484, 20.922546)
@@ -478,7 +469,6 @@ states/Exit/node = SubResource("AnimationNodeAnimation_ssyll")
 states/Exit/position = Vector2(484, 183.92255)
 states/RESET/node = SubResource("AnimationNodeAnimation_4kjr2")
 states/RESET/position = Vector2(317, 100)
-transitions = ["RESET", "EntryCRight", SubResource("AnimationNodeStateMachineTransition_ofovc"), "RESET", "Exit", SubResource("AnimationNodeStateMachineTransition_8upf4"), "RESET", "EntryCBottom", SubResource("AnimationNodeStateMachineTransition_1x8q0")]
 graph_offset = Vector2(0, -17.788748)
 
 [node name="TittleMenu" type="Control" unique_id=2130431488 node_paths=PackedStringArray("_logo", "_ButtonSFX", "_startLogic", "_animationTree")]
@@ -551,6 +541,12 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("12_4t1td")
+script = ExtResource("14_i78tc")
+characterTextures = Dictionary[int, Texture2D]({
+0: ExtResource("12_4t1td"),
+1: ExtResource("15_ssyll"),
+2: ExtResource("16_4kjr2")
+})
 
 [node name="BlackBackground" type="TextureRect" parent="." unique_id=1812270304]
 layout_mode = 1

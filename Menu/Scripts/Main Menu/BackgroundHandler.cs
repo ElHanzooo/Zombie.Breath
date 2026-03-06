@@ -6,15 +6,13 @@ using Godot.Collections;
 public partial class BackgroundHandler : Control
 {
     [Export] private Control ShaderModulate;
-    [Export] private Dictionary<string, Control> Backgrounds = new();
+    [Export] private Dictionary<Episodes, Control> Backgrounds = new();
 
     public void UpdateBackground()
     {
-        string currentTheme = GameManager.Instance.GetCurrentBackgroundName();
-
-        foreach (var theme in Backgrounds.Keys)
+        foreach (Episodes theme in Backgrounds.Keys)
         {
-            if (theme == currentTheme)
+            if (theme == Global.Episode)
             {
                 Backgrounds[theme].Show();
             }
@@ -26,7 +24,13 @@ public partial class BackgroundHandler : Control
 
         if (ShaderModulate != null)
         {
-            ShaderModulate.Modulate = GameManager.Instance.GetModulateColor();
+            ShaderModulate.Modulate = Global.Episode switch
+            {
+                Episodes.Day => new Color("ffffff"),
+                Episodes.Afternoon => new Color("ffa569"),
+                Episodes.Night => new Color("547aa1"),
+                _ => ShaderModulate.Modulate
+            };
         }
     }
 }

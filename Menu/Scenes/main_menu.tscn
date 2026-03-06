@@ -240,9 +240,9 @@ grow_vertical = 2
 script = ExtResource("1_h5auv")
 ShaderModulate = NodePath("Modulate")
 Backgrounds = {
-"Afternoon": NodePath("Afternoon"),
-"Day": NodePath("Day"),
-"Night": NodePath("Night")
+0: NodePath("Day"),
+1: NodePath("Afternoon"),
+2: NodePath("Night")
 }
 
 [node name="Day" type="Control" parent="Background" unique_id=822986393]

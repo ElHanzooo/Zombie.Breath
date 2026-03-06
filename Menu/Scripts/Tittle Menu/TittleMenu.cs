@@ -21,8 +21,16 @@ public partial class TittleMenu : Control
         _logoShake = new ShakeEffect(rotationAmplitude, shakeSpeed);
 
         _animationStateMachine = (AnimationNodeStateMachinePlayback)_animationTree.Get("parameters/playback");
-        _animationTree.Set("parameters/conditions/CBottom", true);
         _animationStateMachine.Travel("RESET");
+        switch (Global.Episode)
+        {
+            case Episodes.Afternoon:
+                _animationStateMachine.Travel("EntryCRight");
+                break;
+            default:
+                _animationStateMachine.Travel("EntryCBottom");
+                break;
+        }
 
         _startLogic.Starting += HandleStartPressed;
         _animationTree.AnimationFinished += OnAnimationFinished;
@@ -36,9 +44,8 @@ public partial class TittleMenu : Control
     private void HandleStartPressed()
     {
         _ButtonSFX?.Play();
-        _animationTree.Set("parameters/conditions/CBottom", false);
-        _animationTree.Set("parameters/conditions/Exit", true);
         _animationStateMachine.Travel("RESET");
+        _animationStateMachine.Travel("Exit");
     }
 
     private void OnAnimationFinished(StringName animName)
