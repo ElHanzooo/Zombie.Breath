@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmugq7hd5bqxv" path="res://Menu/Scripts/Tittle Menu/TittleMenu.cs" id="1_4t1td"]
 [ext_resource type="Texture2D" uid="uid://bejgd7ftbxc4s" path="res://Menu/Sprites/Tittle Menu/Background/4.png" id="1_revhq"]
 [ext_resource type="Texture2D" uid="uid://c6dikidbi5ift" path="res://Menu/Sprites/Tittle Menu/Background/6.png" id="2_efsn5"]
+[ext_resource type="Script" uid="uid://d32tvek7jdk11" path="res://Menu/Scripts/General/RedBackground.cs" id="2_ssyll"]
 [ext_resource type="Texture2D" uid="uid://bg1ftv7ydfvuf" path="res://Menu/Sprites/Tittle Menu/Background/10.png" id="3_v5v8a"]
 [ext_resource type="Texture2D" uid="uid://dyvdmhff3gtcj" path="res://Menu/Sprites/Tittle Menu/Background/5.png" id="4_4t1td"]
 [ext_resource type="Texture2D" uid="uid://noccbro6qq6r" path="res://Menu/Sprites/Tittle Menu/Background/1.png" id="5_y1dot"]
@@ -486,7 +487,21 @@ _ButtonSFX = NodePath("EnterSFX")
 _startLogic = NodePath("StartPressed")
 _animationTree = NodePath("AnimationTree")
 
-[node name="Background" type="TextureRect" parent="." unique_id=383344650]
+[node name="RedBackground" type="Control" parent="." unique_id=1738501292]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ssyll")
+Colors = Dictionary[int, Color]({
+0: Color(1.9949324, 1.9949324, 1.9949324, 1),
+1: Color(1, 1, 1, 1),
+2: Color(0.48795694, 0.48795694, 0.48795694, 1)
+})
+
+[node name="Background" type="TextureRect" parent="RedBackground" unique_id=383344650]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 1
 anchors_preset = 4
@@ -498,7 +513,7 @@ offset_bottom = 362.0
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_vmyal")
 
-[node name="Background2" type="TextureRect" parent="." unique_id=1946085205]
+[node name="Background2" type="TextureRect" parent="RedBackground" unique_id=1946085205]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 1
 anchors_preset = 6
@@ -621,9 +636,6 @@ libraries/ = SubResource("AnimationLibrary_y1dot")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1523214681]
 tree_root = SubResource("AnimationNodeStateMachine_sd217")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/CBottom = false
-parameters/conditions/CRight = false
-parameters/conditions/Exit = false
 parameters/EntryCBottom/Add2/add_amount = 1.0
 parameters/EntryCRight/Add2/add_amount = 1.0
 

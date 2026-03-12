@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ch88mrsg1cdgf" path="res://Menu/Sprites/Campaign Menu/Gradient.svg" id="11_oj7iy"]
 [ext_resource type="Texture2D" uid="uid://ncs8d7821di7" path="res://Menu/Sprites/Campaign Menu/Button3-a.svg" id="12_5y58b"]
 [ext_resource type="Texture2D" uid="uid://078oei2v1oka" path="res://Menu/Sprites/Campaign Menu/Mike/redmike1.svg" id="12_27wm3"]
+[ext_resource type="Script" uid="uid://d32tvek7jdk11" path="res://Menu/Scripts/General/RedBackground.cs" id="12_jfa51"]
 [ext_resource type="Texture2D" uid="uid://0oulaud8a4dl" path="res://Menu/Sprites/Campaign Menu/ACT1.svg" id="13_hgrub"]
 [ext_resource type="Texture2D" uid="uid://iiwla7w2sh50" path="res://Menu/Sprites/Campaign Menu/Mike/redmike2.svg" id="13_tpqbx"]
 [ext_resource type="Texture2D" uid="uid://bsmgbwegu0o50" path="res://Menu/Sprites/Campaign Menu/Mike/redmike3.svg" id="14_c0skb"]
@@ -164,6 +165,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_kjfl6")
+script = ExtResource("12_jfa51")
+Colors = Dictionary[int, Color]({
+0: Color(1.9949324, 1.9949324, 1.9949324, 1),
+1: Color(1, 1, 1, 1),
+2: Color(0.48795694, 0.48795694, 0.48795694, 1)
+})
 
 [node name="Gradient" type="TextureRect" parent="." unique_id=33206276]
 layout_mode = 1
