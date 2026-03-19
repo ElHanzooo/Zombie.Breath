@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://b0x07cptb4kwc"]
+
+[ext_resource type="Script" uid="uid://bbv4sjoisgxc7" path="res://Menu/Scripts/Options/Options.cs" id="1_3avan"]
+[ext_resource type="Texture2D" uid="uid://bq356whuyke22" path="res://Menu/Sprites/Options/background.svg" id="1_ymca2"]
+[ext_resource type="Texture2D" uid="uid://ch66a5r42pd2k" path="res://Menu/Sprites/Options/mike.svg" id="2_0o6lk"]
+[ext_resource type="Shader" uid="uid://dnoqk210tkd6i" path="res://Menu/Materials/shadow.gdshader" id="2_vbeui"]
+[ext_resource type="Texture2D" uid="uid://doyinf67a1cuu" path="res://Menu/Sprites/Options/zombie.svg" id="3_vbeui"]
+[ext_resource type="Texture2D" uid="uid://ckkir0l8skjn3" path="res://Menu/Sprites/Options/x.svg" id="4_3o08m"]
+[ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/General/ButtonsHandler.cs" id="5_vbeui"]
+[ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="7_3o08m"]
+[ext_resource type="Script" uid="uid://c8bkyicuwyv06" path="res://Menu/Scripts/Options/Buttons Actions/BackAction.cs" id="9_r1em2"]
+[ext_resource type="AudioStream" uid="uid://d1fbdphn52exi" path="res://Menu/SFX/Main Menu/click.ogg" id="10_gwwlc"]
+[ext_resource type="AudioStream" uid="uid://ckqvptgwlijas" path="res://Menu/SFX/Main Menu/hover.ogg" id="11_6ib4n"]
+[ext_resource type="AudioStream" uid="uid://da6146rcprxt" path="res://Menu/SFX/Main Menu/error.ogg" id="12_mmxd2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3o08m"]
+shader = ExtResource("2_vbeui")
+shader_parameter/offset = Vector2(10, 5)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/blur_amount = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gsxk"]
+shader = ExtResource("2_vbeui")
+shader_parameter/offset = Vector2(10, 5)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/blur_amount = 1.0
+
+[node name="Options" type="Control" unique_id=1678191070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3avan")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2050949046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_ymca2")
+
+[node name="Mike" type="TextureRect" parent="." unique_id=644837596]
+material = SubResource("ShaderMaterial_3o08m")
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -642.0
+offset_right = 737.0
+grow_vertical = 0
+scale = Vector2(0.55, 0.55)
+pivot_offset = Vector2(0, 642)
+texture = ExtResource("2_0o6lk")
+flip_h = true
+
+[node name="Zombie" type="TextureRect" parent="." unique_id=1945991204]
+material = SubResource("ShaderMaterial_0gsxk")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -609.0
+offset_right = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.55, 0.55)
+pivot_offset = Vector2(475, 609)
+texture = ExtResource("3_vbeui")
+
+[node name="ButtonsHandler" type="Control" parent="." unique_id=1789059019 node_paths=PackedStringArray("_clickSFX", "_hoverSFX", "_errorSFX")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_vbeui")
+_clickSFX = NodePath("ClickSFX")
+_hoverSFX = NodePath("HoverSFX")
+_errorSFX = NodePath("ErrorSFX")
+
+[node name="Back" type="TextureButton" parent="ButtonsHandler" unique_id=35849356 groups=["MenuButtons"]]
+layout_mode = 1
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 295.0
+offset_bottom = 295.0
+scale = Vector2(0.27, 0.27)
+pivot_offset = Vector2(210, 210)
+texture_normal = ExtResource("4_3o08m")
+texture_pressed = ExtResource("4_3o08m")
+texture_hover = ExtResource("4_3o08m")
+texture_disabled = ExtResource("4_3o08m")
+texture_focused = ExtResource("4_3o08m")
+script = ExtResource("7_3o08m")
+HoverValues = Dictionary[String, Variant]({
+"scale": Vector2(0.3, 0.3)
+})
+DefaultValues = Dictionary[String, Variant]({
+"scale": Vector2(0.27, 0.27)
+})
+metadata/Description = ""
+metadata/Disabled = false
+
+[node name="Action" type="Node" parent="ButtonsHandler/Back" unique_id=1666662601]
+script = ExtResource("9_r1em2")
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1731443665]
+stream = ExtResource("10_gwwlc")
+
+[node name="HoverSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1237341909]
+stream = ExtResource("11_6ib4n")
+
+[node name="ErrorSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1274346408]
+stream = ExtResource("12_mmxd2")

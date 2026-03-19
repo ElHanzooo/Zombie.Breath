@@ -12,16 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://bla1e0o2b6w6s" path="res://Menu/Sprites/Main Menu/Buttons/campaign_selected.png" id="3_2snn4"]
 [ext_resource type="Texture2D" uid="uid://cx6lrrcsp4qom" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_10.png" id="3_f0lw7"]
 [ext_resource type="Texture2D" uid="uid://bs5np0o50fr10" path="res://Menu/Sprites/Main Menu/Background/Boat/boat_2.png" id="3_oecam"]
-[ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/Main Menu/GenericUIAnimation.cs" id="4_2snn4"]
+[ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="4_2snn4"]
 [ext_resource type="Texture2D" uid="uid://uyfbhglm6tde" path="res://Menu/Sprites/Main Menu/Background/Sky/Sky-Night.svg" id="4_ug7od"]
 [ext_resource type="Texture2D" uid="uid://b7ge1a5gmyrjn" path="res://Menu/Sprites/Main Menu/Buttons/migigames.png" id="4_uq1xs"]
 [ext_resource type="Texture2D" uid="uid://dgx212adxohgj" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_11.png" id="4_vs6du"]
 [ext_resource type="Texture2D" uid="uid://y1qw3xqc7jji" path="res://Menu/Sprites/Main Menu/Background/Sun and Moon/Moon.svg" id="5_h5auv"]
 [ext_resource type="Texture2D" uid="uid://h321qwlj38ge" path="res://Menu/Sprites/Main Menu/Buttons/minigames_selected.png" id="5_vqa26"]
 [ext_resource type="Texture2D" uid="uid://bytnncpodjfpk" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_12.png" id="5_wtvu0"]
-[ext_resource type="Texture2D" uid="uid://qtmj1v5a15lt" path="res://Menu/Sprites/Main Menu/Buttons/savefiles.png" id="6_180m6"]
 [ext_resource type="Texture2D" uid="uid://c08cxsbmvs2oh" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_13.png" id="6_dkqay"]
-[ext_resource type="Texture2D" uid="uid://er3qmc3353oq" path="res://Menu/Sprites/Main Menu/Buttons/savefiles_selected.png" id="7_5irco"]
 [ext_resource type="Texture2D" uid="uid://orhy0jibdkdo" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_14.png" id="7_oecam"]
 [ext_resource type="Texture2D" uid="uid://p7aysk1y3en3" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_15.png" id="8_54ljp"]
 [ext_resource type="Texture2D" uid="uid://vrfwhxb6ft1r" path="res://Menu/Sprites/Main Menu/Background/Clouds/cloud1.svg" id="8_81ftc"]
@@ -45,15 +43,17 @@
 [ext_resource type="Texture2D" uid="uid://x2jqly00ac3m" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_9.png" id="20_h5auv"]
 [ext_resource type="Texture2D" uid="uid://cy6t40g4c8pox" path="res://Menu/Sprites/Main Menu/Background/Sky/Sky-Aft.svg" id="23_r32im"]
 [ext_resource type="Texture2D" uid="uid://cs2j7k0yte5vx" path="res://Menu/Sprites/Main Menu/Background/Sun and Moon/Sun.svg" id="25_oecam"]
-[ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/Main Menu/ButtonsHandler.cs" id="27_54ljp"]
+[ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/General/ButtonsHandler.cs" id="27_54ljp"]
 [ext_resource type="Script" uid="uid://d0wwof16ve0ve" path="res://Menu/Scripts/Main Menu/Buttons Actions/CampaignAction.cs" id="31_obnb7"]
 [ext_resource type="Script" uid="uid://yl237nb6hh2v" path="res://Menu/Scripts/Main Menu/Buttons Actions/MinigamesAction.cs" id="34_hybhr"]
-[ext_resource type="Script" uid="uid://bixwm0qtrta18" path="res://Menu/Scripts/Main Menu/Buttons Actions/SavefilesAction.cs" id="37_r32im"]
+[ext_resource type="Script" uid="uid://bixwm0qtrta18" path="res://Menu/Scripts/Main Menu/Buttons Actions/CreditsAction.cs" id="37_r32im"]
 [ext_resource type="AudioStream" uid="uid://d1fbdphn52exi" path="res://Menu/SFX/Main Menu/click.ogg" id="38_7gt5c"]
 [ext_resource type="AudioStream" uid="uid://ckqvptgwlijas" path="res://Menu/SFX/Main Menu/hover.ogg" id="39_obnb7"]
 [ext_resource type="AudioStream" uid="uid://da6146rcprxt" path="res://Menu/SFX/Main Menu/error.ogg" id="40_e3j4t"]
 [ext_resource type="Script" uid="uid://beot2urrjl252" path="res://Menu/Scripts/Main Menu/Buttons Actions/TrophiesAction.cs" id="40_vw3fn"]
 [ext_resource type="Script" uid="uid://bjdj2in16iled" path="res://Menu/Scripts/Main Menu/Buttons Actions/OptionsAction.cs" id="42_ug7od"]
+[ext_resource type="Texture2D" uid="uid://cftmgso0enlni" path="res://Menu/Sprites/Main Menu/Buttons/credits.png" id="44_acc5a"]
+[ext_resource type="Texture2D" uid="uid://b8bssj5q6ukxu" path="res://Menu/Sprites/Main Menu/Buttons/credits_selected.png" id="45_u01t2"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ra7ut"]
 frames = 20
@@ -360,7 +360,7 @@ grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_81ftc")
 script = ExtResource("9_n3mha")
-animationPlayer = NodePath("../../AnimationPlayerCloud")
+animationPlayer = NodePath("../AnimationPlayerCloud")
 cloudTextures = Array[Texture2D]([ExtResource("8_81ftc"), ExtResource("10_acc5a"), ExtResource("11_u01t2")])
 
 [node name="Ocean" type="TextureRect" parent="Background/Modulate" unique_id=115071650]
@@ -392,11 +392,13 @@ grow_vertical = 2
 pivot_offset = Vector2(61, 65)
 texture = SubResource("AnimatedTexture_54ljp")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background" unique_id=1648673757]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Modulate" unique_id=1648673757]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_xawwi")
 autoplay = &"Boat"
 
-[node name="AnimationPlayerCloud" type="AnimationPlayer" parent="Background" unique_id=292857428]
+[node name="AnimationPlayerCloud" type="AnimationPlayer" parent="Background/Modulate" unique_id=292857428]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_58u2v")
 autoplay = &"Cloud"
 
@@ -411,7 +413,7 @@ offset_bottom = 364.0
 grow_vertical = 2
 texture = ExtResource("1_706j3")
 
-[node name="ButtonsHandler" type="Control" parent="." unique_id=1383450689 node_paths=PackedStringArray("_label", "_click", "_hover", "_error")]
+[node name="ButtonsHandler" type="Control" parent="." unique_id=1383450689 node_paths=PackedStringArray("_label", "_clickSFX", "_hoverSFX", "_errorSFX")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -420,9 +422,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("27_54ljp")
 _label = NodePath("../Label")
-_click = NodePath("ClickSFX")
-_hover = NodePath("HoverSFX")
-_error = NodePath("ErrorSFX")
+_clickSFX = NodePath("ClickSFX")
+_hoverSFX = NodePath("HoverSFX")
+_errorSFX = NodePath("ErrorSFX")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ButtonsHandler" unique_id=1284550483]
 layout_mode = 1
@@ -478,12 +480,12 @@ metadata/Disabled = true
 [node name="Action" type="Node" parent="ButtonsHandler/VBoxContainer/Minigames" unique_id=1004103752]
 script = ExtResource("34_hybhr")
 
-[node name="Savefiles" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1109636927 groups=["MenuButtons"]]
+[node name="Credits" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1109636927 groups=["MenuButtons"]]
 layout_mode = 2
-texture_normal = ExtResource("6_180m6")
-texture_pressed = ExtResource("7_5irco")
-texture_hover = ExtResource("7_5irco")
-texture_disabled = ExtResource("6_180m6")
+texture_normal = ExtResource("44_acc5a")
+texture_pressed = ExtResource("45_u01t2")
+texture_hover = ExtResource("45_u01t2")
+texture_disabled = ExtResource("44_acc5a")
 stretch_mode = 3
 script = ExtResource("4_2snn4")
 HoverValues = Dictionary[String, Variant]({
@@ -492,10 +494,10 @@ HoverValues = Dictionary[String, Variant]({
 DefaultValues = Dictionary[String, Variant]({
 "position:x": 0.0
 })
-metadata/Description = "Manage your save files."
+metadata/Description = "View the development team."
 metadata/Disabled = false
 
-[node name="Action" type="Node" parent="ButtonsHandler/VBoxContainer/Savefiles" unique_id=1536951592]
+[node name="Action" type="Node" parent="ButtonsHandler/VBoxContainer/Credits" unique_id=1536951592]
 script = ExtResource("37_r32im")
 
 [node name="Trophies" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=1536847389 groups=["MenuButtons"]]
