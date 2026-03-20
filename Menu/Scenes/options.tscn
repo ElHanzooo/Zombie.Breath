@@ -9,9 +9,10 @@
 [ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/General/ButtonsHandler.cs" id="5_vbeui"]
 [ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="7_3o08m"]
 [ext_resource type="Script" uid="uid://c8bkyicuwyv06" path="res://Menu/Scripts/Options/Buttons Actions/BackAction.cs" id="9_r1em2"]
-[ext_resource type="AudioStream" uid="uid://d1fbdphn52exi" path="res://Menu/SFX/Main Menu/click.ogg" id="10_gwwlc"]
+[ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="10_6ib4n"]
 [ext_resource type="AudioStream" uid="uid://ckqvptgwlijas" path="res://Menu/SFX/Main Menu/hover.ogg" id="11_6ib4n"]
 [ext_resource type="AudioStream" uid="uid://da6146rcprxt" path="res://Menu/SFX/Main Menu/error.ogg" id="12_mmxd2"]
+[ext_resource type="AudioStream" uid="uid://b11f8pnqrvdf" path="res://Menu/Musics/options.mp3" id="13_mmxd2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3o08m"]
 shader = ExtResource("2_vbeui")
@@ -117,10 +118,16 @@ metadata/Disabled = false
 script = ExtResource("9_r1em2")
 
 [node name="ClickSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1731443665]
-stream = ExtResource("10_gwwlc")
+stream = ExtResource("10_6ib4n")
 
 [node name="HoverSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1237341909]
 stream = ExtResource("11_6ib4n")
 
 [node name="ErrorSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1274346408]
 stream = ExtResource("12_mmxd2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=686963178]
+stream = ExtResource("13_mmxd2")
+volume_db = -3.0
+autoplay = true
+parameters/looping = true

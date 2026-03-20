@@ -47,13 +47,13 @@
 [ext_resource type="Script" uid="uid://d0wwof16ve0ve" path="res://Menu/Scripts/Main Menu/Buttons Actions/CampaignAction.cs" id="31_obnb7"]
 [ext_resource type="Script" uid="uid://yl237nb6hh2v" path="res://Menu/Scripts/Main Menu/Buttons Actions/MinigamesAction.cs" id="34_hybhr"]
 [ext_resource type="Script" uid="uid://bixwm0qtrta18" path="res://Menu/Scripts/Main Menu/Buttons Actions/CreditsAction.cs" id="37_r32im"]
-[ext_resource type="AudioStream" uid="uid://d1fbdphn52exi" path="res://Menu/SFX/Main Menu/click.ogg" id="38_7gt5c"]
 [ext_resource type="AudioStream" uid="uid://ckqvptgwlijas" path="res://Menu/SFX/Main Menu/hover.ogg" id="39_obnb7"]
 [ext_resource type="AudioStream" uid="uid://da6146rcprxt" path="res://Menu/SFX/Main Menu/error.ogg" id="40_e3j4t"]
 [ext_resource type="Script" uid="uid://beot2urrjl252" path="res://Menu/Scripts/Main Menu/Buttons Actions/TrophiesAction.cs" id="40_vw3fn"]
 [ext_resource type="Script" uid="uid://bjdj2in16iled" path="res://Menu/Scripts/Main Menu/Buttons Actions/OptionsAction.cs" id="42_ug7od"]
 [ext_resource type="Texture2D" uid="uid://cftmgso0enlni" path="res://Menu/Sprites/Main Menu/Buttons/credits.png" id="44_acc5a"]
 [ext_resource type="Texture2D" uid="uid://b8bssj5q6ukxu" path="res://Menu/Sprites/Main Menu/Buttons/credits_selected.png" id="45_u01t2"]
+[ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="52_acc5a"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ra7ut"]
 frames = 20
@@ -550,7 +550,7 @@ metadata/Disabled = false
 script = ExtResource("42_ug7od")
 
 [node name="ClickSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1658326856]
-stream = ExtResource("38_7gt5c")
+stream = ExtResource("52_acc5a")
 
 [node name="HoverSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=870793026]
 stream = ExtResource("39_obnb7")
