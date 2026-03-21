@@ -54,6 +54,8 @@
 [ext_resource type="Texture2D" uid="uid://cftmgso0enlni" path="res://Menu/Sprites/Main Menu/Buttons/credits.png" id="44_acc5a"]
 [ext_resource type="Texture2D" uid="uid://b8bssj5q6ukxu" path="res://Menu/Sprites/Main Menu/Buttons/credits_selected.png" id="45_u01t2"]
 [ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="52_acc5a"]
+[ext_resource type="Texture2D" uid="uid://c63hft5ao8osn" path="res://Menu/Sprites/Main Menu/Buttons/exit.svg" id="52_u01t2"]
+[ext_resource type="Script" uid="uid://dgf07d7pog6k7" path="res://Menu/Scripts/Main Menu/Buttons Actions/ExitAction.cs" id="53_58u2v"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ra7ut"]
 frames = 20
@@ -525,9 +527,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -181.0
+offset_left = -293.0
 offset_top = -40.0
-offset_right = 42.0
+offset_right = -70.0
 offset_bottom = 232.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
@@ -548,6 +550,35 @@ metadata/Disabled = false
 
 [node name="Action" type="Node" parent="ButtonsHandler/Options" unique_id=693548225]
 script = ExtResource("42_ug7od")
+
+[node name="Exit" type="TextureButton" parent="ButtonsHandler" unique_id=2138190340 groups=["MenuButtons"]]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -212.0
+offset_top = -83.0
+offset_right = 83.0
+offset_bottom = 353.0
+grow_horizontal = 0
+scale = Vector2(0.28, 0.28)
+pivot_offset = Vector2(147, 155)
+texture_normal = ExtResource("52_u01t2")
+texture_pressed = ExtResource("52_u01t2")
+texture_hover = ExtResource("52_u01t2")
+texture_disabled = ExtResource("52_u01t2")
+script = ExtResource("4_2snn4")
+HoverValues = Dictionary[String, Variant]({
+"scale": Vector2(0.33, 0.33)
+})
+DefaultValues = Dictionary[String, Variant]({
+"scale": Vector2(0.28, 0.28)
+})
+metadata/Description = "Exit the game."
+metadata/Disabled = false
+
+[node name="Action" type="Node" parent="ButtonsHandler/Exit" unique_id=1262964915]
+script = ExtResource("53_58u2v")
 
 [node name="ClickSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1658326856]
 stream = ExtResource("52_acc5a")
