@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="Zombie Breath"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+
+[autoload]
+
+Global="*uid://cqifgp5lm2dps"
+SaveManager="*uid://dadjqa7rmkrr4"
 
 [display]
 
@@ -21,7 +26,7 @@ window/stretch/mode="canvas_items"
 
 [dotnet]
 
-project/assembly_name="Game"
+project/assembly_name="Zombie Breath"
 
 [physics]
 

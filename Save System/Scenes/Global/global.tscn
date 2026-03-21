@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cqifgp5lm2dps"]
+
+[ext_resource type="Script" uid="uid://b0uagk8tsecrx" path="res://Save System/Scripts/Global/Global.cs" id="1_o38jn"]
+
+[node name="Global" type="Node" unique_id=879650808]
+script = ExtResource("1_o38jn")
