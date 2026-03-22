@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 public partial class FiniteStateMachineComponent : Node
 {
+    [Export]
+    public State InitialState { get; set; }
+
     private State currentState;
-    private Dictionary<string, State> states = [];
+    private readonly Dictionary<string, State> states = [];
 
     public override void _Ready()
     {
@@ -15,6 +18,9 @@ public partial class FiniteStateMachineComponent : Node
                 states[state.Name.ToString().ToLower()] = state;
                 state.Transitioned += OnStateTransition;
             }
+
+        InitialState?.Enter();
+        currentState = InitialState;
     }
 
     public override void _Process(double delta)
