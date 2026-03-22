@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlwxwrlldelp3"
+path="res://.godot/imported/Night Vision.ogg-0d5efd6febdc980a48be9e3ddfefae50.oggvorbisstr"
+
+[deps]
+
+source_file="res://Characters/Mike/Assets/SFXs/Night Vision.ogg"
+dest_files=["res://.godot/imported/Night Vision.ogg-0d5efd6febdc980a48be9e3ddfefae50.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
