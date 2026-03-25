@@ -20,7 +20,10 @@ public partial class IdleState : State
 
     public override void Update(double delta)
     {
-        if (Input.IsActionJustPressed("Shoot"))
+        if (Input.IsActionJustPressed("Shoot") && !Mike.NeedReload)
             EmitSignal(SignalName.Transitioned, "Shoot");
+
+        if (Input.IsActionJustPressed("Reload") && Mike.NeedReload)
+            EmitSignal(SignalName.Transitioned, "Reload");
     }
 }

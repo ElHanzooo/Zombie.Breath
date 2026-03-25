@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://b1dl5a80s886i" path="res://Components/Finite State Machine/FiniteStateMachineComponent.cs" id="29_dk7lf"]
 [ext_resource type="Script" uid="uid://7g5c2ptx5ibg" path="res://Characters/Mike/States/IdleState.cs" id="30_cq52k"]
 [ext_resource type="Script" uid="uid://ct1hcpi3nlxul" path="res://Characters/Mike/States/ShootState.cs" id="31_u53qn"]
+[ext_resource type="Script" uid="uid://c36gsl4e4w2rk" path="res://Characters/Mike/States/ReloadState.cs" id="32_e0l64"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x1g8"]
 animations = [{
@@ -176,5 +177,10 @@ metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
 
 [node name="Shoot" type="Node" parent="StateMachine" unique_id=1236607701 node_paths=PackedStringArray("Mike")]
 script = ExtResource("31_u53qn")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="Reload" type="Node" parent="StateMachine" unique_id=1829210942 node_paths=PackedStringArray("Mike")]
+script = ExtResource("32_e0l64")
 Mike = NodePath("../..")
 metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"

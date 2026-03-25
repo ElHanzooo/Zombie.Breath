@@ -1,8 +1,7 @@
 using Godot;
-using System;
 
 [GlobalClass]
-public partial class ShootState : State
+public partial class ReloadState : State
 {
     [Export] private Mike Mike { get; set; }
 
@@ -16,12 +15,12 @@ public partial class ShootState : State
 
     public override void Enter()
     {
-        animations.Play("Shoot");
-        Global.Instance.PlaySFX(GD.Load<AudioStream>("res://Characters/Mike/Assets/SFXs/Shoot.ogg"));
+        animations.Play("Reload");
+        Global.Instance.PlaySFX(GD.Load<AudioStream>("res://Characters/Mike/Assets/SFXs/Reload.ogg"));
     }
 
     public override void Exit()
     {
-        Mike.NeedReload = true;
+        Mike.NeedReload = false;
     }
 }
