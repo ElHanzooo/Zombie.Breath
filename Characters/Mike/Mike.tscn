@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://ct1hcpi3nlxul" path="res://Characters/Mike/States/ShootState.cs" id="31_u53qn"]
 [ext_resource type="Script" uid="uid://c36gsl4e4w2rk" path="res://Characters/Mike/States/ReloadState.cs" id="32_e0l64"]
 [ext_resource type="Script" uid="uid://cnc2lvkgg8x05" path="res://Characters/Mike/States/UpState.cs" id="33_ptsro"]
+[ext_resource type="Script" uid="uid://bjtcwtleowluv" path="res://Characters/Mike/States/UpShootState.cs" id="34_1xxwy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x1g8"]
 animations = [{
@@ -187,5 +188,10 @@ metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
 
 [node name="Up" type="Node" parent="StateMachine" unique_id=636364140 node_paths=PackedStringArray("Mike")]
 script = ExtResource("33_ptsro")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="UpShoot" type="Node" parent="StateMachine" unique_id=893510560 node_paths=PackedStringArray("Mike")]
+script = ExtResource("34_1xxwy")
 Mike = NodePath("../..")
 metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"

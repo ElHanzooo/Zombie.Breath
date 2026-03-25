@@ -15,14 +15,28 @@ public partial class UpState : State
 
     public override void Enter()
     {
-        animations.Play("Up");
+        if (Mike.IsLookingUp)
+        {
+            animations.Animation = "Up";
+            animations.Frame = 3;
+        }
+        else
+            animations.Play("Up");
+
         animations.AnimationFinished += OnAnimationFinished;
+        Mike.IsLookingUp = true;
     }
 
     public override void Update(double delta)
     {
         if (Input.IsActionJustReleased("Up"))
+        {
+            Mike.IsLookingUp = false;
             EmitSignal(SignalName.Transitioned, "Idle");
+        }
+
+        if (Input.IsActionJustPressed("Shoot") && !Mike.NeedReload)
+            EmitSignal(SignalName.Transitioned, "UpShoot");
     }
 
     public override void Exit()

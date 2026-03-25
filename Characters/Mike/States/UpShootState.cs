@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [GlobalClass]
-public partial class ShootState : State
+public partial class UpShootState : State
 {
     [Export] private Mike Mike { get; set; }
 
@@ -15,10 +15,18 @@ public partial class ShootState : State
 
     public override void Enter()
     {
-        animations.Play("Shoot");
+        animations.Play("Up Shoot");
         animations.AnimationFinished += OnAnimationFinished;
 
         Global.Instance.PlaySFX(GD.Load<AudioStream>("res://Characters/Mike/Assets/SFXs/Shoot.ogg"));
+    }
+
+    public override void Update(double delta)
+    {
+        if (Input.IsActionJustReleased("Up"))
+        {
+            Mike.IsLookingUp = false;
+        }
     }
 
     public override void Exit()
