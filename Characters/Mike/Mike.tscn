@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://5eer41ly0tgu"]
+[gd_scene format=3 uid="uid://4kwwmuw6l5e4"]
 
 [ext_resource type="Script" uid="uid://cqcf5tcrefg6p" path="res://Characters/Mike/Mike.cs" id="1_jvhoi"]
 [ext_resource type="Texture2D" uid="uid://5s38iic181pj" path="res://Characters/Mike/Assets/Sprites/Hit/Hit 1.svg" id="2_3yrla"]
@@ -29,7 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://bj6e05xpwevxi" path="res://Characters/Mike/Assets/Sprites/Up Shoot/Up Shoot 2.svg" id="27_80xd5"]
 [ext_resource type="Texture2D" uid="uid://cf8au8xl4gwst" path="res://Characters/Mike/Assets/Sprites/Up Shoot/Up Shoot 3.svg" id="28_nt3xl"]
 [ext_resource type="Script" uid="uid://b1dl5a80s886i" path="res://Components/Finite State Machine/FiniteStateMachineComponent.cs" id="29_dk7lf"]
-[ext_resource type="Script" uid="uid://cv2vm8bf1o2ks" path="res://Characters/Mike/States/IdleState.cs" id="30_cq52k"]
+[ext_resource type="Script" uid="uid://7g5c2ptx5ibg" path="res://Characters/Mike/States/IdleState.cs" id="30_cq52k"]
+[ext_resource type="Script" uid="uid://ct1hcpi3nlxul" path="res://Characters/Mike/States/ShootState.cs" id="31_u53qn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x1g8"]
 animations = [{
@@ -170,5 +171,10 @@ metadata/_custom_type_script = "uid://b1dl5a80s886i"
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=2130228264 node_paths=PackedStringArray("Mike")]
 script = ExtResource("30_cq52k")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="Shoot" type="Node" parent="StateMachine" unique_id=1236607701 node_paths=PackedStringArray("Mike")]
+script = ExtResource("31_u53qn")
 Mike = NodePath("../..")
 metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"

@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [GlobalClass]
-public partial class IdleState : State
+public partial class ShootState : State
 {
     [Export] private Mike Mike { get; set; }
 
@@ -11,16 +11,12 @@ public partial class IdleState : State
     public override void _Ready()
     {
         animations = Mike.GetNode<AnimatedSprite2D>("Animations");
+        animations.AnimationFinished += () => EmitSignal(SignalName.Transitioned, "Idle");
     }
 
     public override void Enter()
     {
-        animations.Play("Idle");
-    }
-
-    public override void Update(double delta)
-    {
-        if (Input.IsActionJustPressed("Shoot"))
-            EmitSignal(SignalName.Transitioned, "Shoot");
+        animations.Play("Shoot");
+        Global.Instance.PlaySFX(GD.Load<AudioStream>("res://Characters/Mike/Assets/SFXs/Shoot.ogg"));
     }
 }
