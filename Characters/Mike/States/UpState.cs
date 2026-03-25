@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [GlobalClass]
-public partial class ReloadState : State
+public partial class UpState : State
 {
     [Export] private Mike Mike { get; set; }
 
@@ -15,20 +15,23 @@ public partial class ReloadState : State
 
     public override void Enter()
     {
-        animations.Play("Reload");
+        animations.Play("Up");
         animations.AnimationFinished += OnAnimationFinished;
+    }
 
-        Global.Instance.PlaySFX(GD.Load<AudioStream>("res://Characters/Mike/Assets/SFXs/Reload.ogg"));
+    public override void Update(double delta)
+    {
+        if (Input.IsActionJustReleased("Up"))
+            EmitSignal(SignalName.Transitioned, "Idle");
     }
 
     public override void Exit()
     {
         animations.AnimationFinished -= OnAnimationFinished;
-        Mike.NeedReload = false;
     }
 
     private void OnAnimationFinished()
     {
-        EmitSignal(SignalName.Transitioned, "Idle");
+        animations.Frame = 2;
     }
 }

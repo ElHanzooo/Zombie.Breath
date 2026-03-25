@@ -25,5 +25,8 @@ public partial class IdleState : State
 
         if (Input.IsActionJustPressed("Reload") && Mike.NeedReload)
             EmitSignal(SignalName.Transitioned, "Reload");
+
+        if (Input.IsActionJustPressed("Up"))
+            EmitSignal(SignalName.Transitioned, "Up");
     }
 }

@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://7g5c2ptx5ibg" path="res://Characters/Mike/States/IdleState.cs" id="30_cq52k"]
 [ext_resource type="Script" uid="uid://ct1hcpi3nlxul" path="res://Characters/Mike/States/ShootState.cs" id="31_u53qn"]
 [ext_resource type="Script" uid="uid://c36gsl4e4w2rk" path="res://Characters/Mike/States/ReloadState.cs" id="32_e0l64"]
+[ext_resource type="Script" uid="uid://cnc2lvkgg8x05" path="res://Characters/Mike/States/UpState.cs" id="33_ptsro"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x1g8"]
 animations = [{
@@ -158,8 +159,7 @@ script = ExtResource("1_jvhoi")
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=509084171]
 sprite_frames = SubResource("SpriteFrames_1x1g8")
-animation = &"Idle"
-frame_progress = 0.77663225
+animation = &"Up"
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=411893142]
 position = Vector2(-180, -32)
@@ -182,5 +182,10 @@ metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
 
 [node name="Reload" type="Node" parent="StateMachine" unique_id=1829210942 node_paths=PackedStringArray("Mike")]
 script = ExtResource("32_e0l64")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="Up" type="Node" parent="StateMachine" unique_id=636364140 node_paths=PackedStringArray("Mike")]
+script = ExtResource("33_ptsro")
 Mike = NodePath("../..")
 metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"

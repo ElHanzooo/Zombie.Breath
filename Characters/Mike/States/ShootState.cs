@@ -11,17 +11,24 @@ public partial class ShootState : State
     public override void _Ready()
     {
         animations = Mike.GetNode<AnimatedSprite2D>("Animations");
-        animations.AnimationFinished += () => EmitSignal(SignalName.Transitioned, "Idle");
     }
 
     public override void Enter()
     {
         animations.Play("Shoot");
+        animations.AnimationFinished += OnAnimationFinished;
+
         Global.Instance.PlaySFX(GD.Load<AudioStream>("res://Characters/Mike/Assets/SFXs/Shoot.ogg"));
     }
 
     public override void Exit()
     {
+        animations.AnimationFinished -= OnAnimationFinished;
         Mike.NeedReload = true;
+    }
+
+    private void OnAnimationFinished()
+    {
+        EmitSignal(SignalName.Transitioned, "Idle");
     }
 }
