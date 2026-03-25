@@ -12,6 +12,18 @@ public partial class Global : Node
     {
         Instance = this;
     }
+
+    public void PlaySFX(AudioStream sfx)
+    {
+        AudioStreamPlayer player = new()
+        {
+            Stream = sfx,
+            Autoplay = true
+        };
+        AddChild(player);
+
+        player.Finished += player.QueueFree;
+    }
 }
 
 public enum Episodes
