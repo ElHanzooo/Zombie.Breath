@@ -9,7 +9,7 @@ public partial class Character : TextureRect
 
     public override void _Ready()
     {
-        switch (Global.Episode)
+        switch (Global.Instance.Episode)
         {
             case Episodes.Day:
                 ChangeTexture(Episodes.Day, new Vector2(1.7f, 1.7f));

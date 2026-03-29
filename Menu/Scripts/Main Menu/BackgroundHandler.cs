@@ -12,7 +12,7 @@ public partial class BackgroundHandler : Control
     {
         foreach (Episodes theme in Backgrounds.Keys)
         {
-            if (theme == Global.Episode)
+            if (theme == Global.Instance.Episode)
             {
                 Backgrounds[theme].Show();
             }
@@ -24,7 +24,7 @@ public partial class BackgroundHandler : Control
 
         if (ShaderModulate != null)
         {
-            ShaderModulate.Modulate = Global.Episode switch
+            ShaderModulate.Modulate = Global.Instance.Episode switch
             {
                 Episodes.Day => new Color("ffffff"),
                 Episodes.Afternoon => new Color("ffa569"),

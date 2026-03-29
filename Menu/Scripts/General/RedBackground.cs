@@ -4,16 +4,19 @@ using Godot.Collections;
 
 public partial class RedBackground : Control
 {
-    [Export] Dictionary<Episodes, Color> Colors = new();
+    [Export] Dictionary<Episodes, float> ColorsBright = new();
 
     public override void _Ready()
     {
-        Modulate = Global.Episode switch
+        if ((ShaderMaterial)Material != null)
         {
-            Episodes.Day => Colors.ContainsKey(Global.Episode) ? Colors[Global.Episode] : Modulate,
-            Episodes.Afternoon => Colors.ContainsKey(Global.Episode) ? Colors[Global.Episode] : Modulate,
-            Episodes.Night => Colors.ContainsKey(Global.Episode) ? Colors[Global.Episode] : Modulate,
-            _ => Modulate
-        };
+            ((ShaderMaterial)Material).SetShaderParameter("bright", Global.Instance.Episode switch
+            {
+                Episodes.Day => ColorsBright[Episodes.Day],
+                Episodes.Afternoon => ColorsBright[Episodes.Afternoon],
+                Episodes.Night => ColorsBright[Episodes.Night],
+                _ => 0
+            });
+        }
     }
 }

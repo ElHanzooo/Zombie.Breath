@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bbv4sjoisgxc7" path="res://Menu/Scripts/Options/Options.cs" id="1_3avan"]
 [ext_resource type="Texture2D" uid="uid://bq356whuyke22" path="res://Menu/Sprites/Options/background.svg" id="1_ymca2"]
 [ext_resource type="Texture2D" uid="uid://ch66a5r42pd2k" path="res://Menu/Sprites/Options/mike.svg" id="2_0o6lk"]
-[ext_resource type="Shader" uid="uid://dnoqk210tkd6i" path="res://Menu/Materials/shadow.gdshader" id="2_vbeui"]
+[ext_resource type="Shader" uid="uid://dnoqk210tkd6i" path="res://Menu/Materials/Shadow.gdshader" id="2_vbeui"]
 [ext_resource type="Texture2D" uid="uid://doyinf67a1cuu" path="res://Menu/Sprites/Options/zombie.svg" id="3_vbeui"]
 [ext_resource type="Texture2D" uid="uid://ckkir0l8skjn3" path="res://Menu/Sprites/Options/x.svg" id="4_3o08m"]
 [ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/General/ButtonsHandler.cs" id="5_vbeui"]

@@ -3,8 +3,15 @@ using System;
 
 public partial class Global : Node
 {
-    public static int Act { get; set; } = 1;
-    public static Episodes Episode { get; set; } = Episodes.Day;
+    public static Global Instance { get; private set; }
+
+    public int Act = 1;
+    public Episodes Episode = Episodes.Day;
+
+    public override void _Ready()
+    {
+        Instance = this;
+    }
 }
 
 public enum Episodes

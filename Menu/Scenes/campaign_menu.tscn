@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bcuxwfjqbi7qh" path="res://Menu/Scripts/Campaign Menu/CampaignMenu.cs" id="1_kfl7n"]
 [ext_resource type="Texture2D" uid="uid://bejgd7ftbxc4s" path="res://Menu/Sprites/Tittle Menu/Background/4.png" id="1_t4cvq"]
 [ext_resource type="Texture2D" uid="uid://c6dikidbi5ift" path="res://Menu/Sprites/Tittle Menu/Background/6.png" id="2_s2dgl"]
+[ext_resource type="Shader" uid="uid://b0dgjpgmca0ck" path="res://Menu/Materials/Bright.gdshader" id="2_viyad"]
 [ext_resource type="Texture2D" uid="uid://bg1ftv7ydfvuf" path="res://Menu/Sprites/Tittle Menu/Background/10.png" id="3_5y58b"]
 [ext_resource type="Texture2D" uid="uid://dyvdmhff3gtcj" path="res://Menu/Sprites/Tittle Menu/Background/5.png" id="4_hgrub"]
 [ext_resource type="Texture2D" uid="uid://noccbro6qq6r" path="res://Menu/Sprites/Tittle Menu/Background/1.png" id="5_kfl7n"]
@@ -21,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://bwpnt0ikq1p6s" path="res://Menu/Sprites/Campaign Menu/Mike/redmike4.svg" id="15_ckrgn"]
 [ext_resource type="Texture2D" uid="uid://dl7jvbrdpyuek" path="res://Menu/Sprites/Campaign Menu/black.svg" id="18_hgrub"]
 [ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="20_4yfre"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sekhd"]
+shader = ExtResource("2_viyad")
+shader_parameter/bright = 0.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_kjfl6"]
 frames = 10
@@ -157,7 +162,7 @@ script = ExtResource("1_kfl7n")
 _AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1607075361]
-self_modulate = Color(0.5, 0.5, 0.5, 1)
+material = SubResource("ShaderMaterial_sekhd")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,10 +171,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_kjfl6")
 script = ExtResource("12_jfa51")
-Colors = Dictionary[int, Color]({
-0: Color(1.9949324, 1.9949324, 1.9949324, 1),
-1: Color(1, 1, 1, 1),
-2: Color(0.48795694, 0.48795694, 0.48795694, 1)
+ColorsBright = Dictionary[int, float]({
+0: 0.0,
+1: -0.5,
+2: -0.8
 })
 
 [node name="Gradient" type="TextureRect" parent="." unique_id=33206276]

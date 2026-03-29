@@ -22,7 +22,7 @@ public partial class TittleMenu : Control
 
         _animationStateMachine = (AnimationNodeStateMachinePlayback)_animationTree.Get("parameters/playback");
         _animationStateMachine.Travel("RESET");
-        switch (Global.Episode)
+        switch (Global.Instance.Episode)
         {
             case Episodes.Afternoon:
                 _animationStateMachine.Travel("EntryCRight");
