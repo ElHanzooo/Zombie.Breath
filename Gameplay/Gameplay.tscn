@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctcutax5jtg3k" path="res://Gameplay/Gameplay.cs" id="1_hs5x1"]
 [ext_resource type="PackedScene" uid="uid://cpx377iqn25hx" path="res://Background/Background.tscn" id="2_jrg7p"]
+[ext_resource type="PackedScene" uid="uid://4kwwmuw6l5e4" path="res://Characters/Mike/Mike.tscn" id="3_5vg7g"]
 
 [node name="Gameplay" type="Node2D" unique_id=1220325708 node_paths=PackedStringArray("Background")]
 script = ExtResource("1_hs5x1")
@@ -12,5 +13,7 @@ Background = NodePath("Background")
 [node name="Background" parent="Background" unique_id=784895323 instance=ExtResource("2_jrg7p")]
 
 [node name="Characters" type="CanvasLayer" parent="." unique_id=1150913949]
+
+[node name="Mike" parent="Characters" unique_id=1829606242 instance=ExtResource("3_5vg7g")]
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1830814885]

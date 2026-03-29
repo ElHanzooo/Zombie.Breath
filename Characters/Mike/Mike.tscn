@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://4kwwmuw6l5e4"]
+
+[ext_resource type="Script" uid="uid://cqcf5tcrefg6p" path="res://Characters/Mike/Mike.cs" id="1_jvhoi"]
+[ext_resource type="Texture2D" uid="uid://5s38iic181pj" path="res://Characters/Mike/Assets/Sprites/Hit/Hit 1.svg" id="2_3yrla"]
+[ext_resource type="Texture2D" uid="uid://tkcjxle5pdh6" path="res://Characters/Mike/Assets/Sprites/Idle/Idle 1.svg" id="2_wgo6q"]
+[ext_resource type="Texture2D" uid="uid://bt05rysnblxnu" path="res://Characters/Mike/Assets/Sprites/Hit/Hit 2.svg" id="3_dk7lf"]
+[ext_resource type="Texture2D" uid="uid://f3ev4nvurll4" path="res://Characters/Mike/Assets/Sprites/Idle/Idle 2.svg" id="3_jm0m8"]
+[ext_resource type="Texture2D" uid="uid://h5pffyl07qi0" path="res://Characters/Mike/Assets/Sprites/Idle/Idle 3.svg" id="4_ak111"]
+[ext_resource type="Texture2D" uid="uid://4h4lmgegef27" path="res://Characters/Mike/Assets/Sprites/Hit/Hit 3.svg" id="4_cq52k"]
+[ext_resource type="Texture2D" uid="uid://es1r6vfwt4n3" path="res://Characters/Mike/Assets/Sprites/Idle/Idle 4.svg" id="5_ket7h"]
+[ext_resource type="Texture2D" uid="uid://clx5g0ajc2dib" path="res://Characters/Mike/Assets/Sprites/Hit/Hit 4.svg" id="5_u53qn"]
+[ext_resource type="Texture2D" uid="uid://ci7kgrxpk16bo" path="res://Characters/Mike/Assets/Sprites/Idle/Idle 5.svg" id="6_2p580"]
+[ext_resource type="Texture2D" uid="uid://wecwh4m5nwji" path="res://Characters/Mike/Assets/Sprites/Hit/Hit 5.svg" id="6_e0l64"]
+[ext_resource type="Texture2D" uid="uid://d18r46kufgcwu" path="res://Characters/Mike/Assets/Sprites/Idle/Idle 6.svg" id="7_4pjbk"]
+[ext_resource type="Texture2D" uid="uid://dmbgart35if2j" path="res://Characters/Mike/Assets/Sprites/Shoot/Shoot 1.svg" id="8_ket7h"]
+[ext_resource type="Texture2D" uid="uid://d4if62vj5htvn" path="res://Characters/Mike/Assets/Sprites/Shoot/Shoot 2.svg" id="9_2p580"]
+[ext_resource type="Texture2D" uid="uid://bxpfrw27q6qs4" path="res://Characters/Mike/Assets/Sprites/Shoot/Shoot 3.svg" id="10_4pjbk"]
+[ext_resource type="Texture2D" uid="uid://xvm4ep512l7j" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 1.svg" id="13_ptsro"]
+[ext_resource type="Texture2D" uid="uid://dml6pcb6syu7" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 2.svg" id="14_1xxwy"]
+[ext_resource type="Texture2D" uid="uid://qbye05cys8od" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 3.svg" id="15_bo3ns"]
+[ext_resource type="Texture2D" uid="uid://rrjuhax185c0" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 4.svg" id="16_srb6m"]
+[ext_resource type="Texture2D" uid="uid://cnqqv4is2jvmk" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 5.svg" id="17_sfjdk"]
+[ext_resource type="Texture2D" uid="uid://2xj3kyna17ge" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 6.svg" id="18_jumrr"]
+[ext_resource type="Texture2D" uid="uid://cjqh241e7d16f" path="res://Characters/Mike/Assets/Sprites/Reload/Reloading 7.svg" id="19_b0dv3"]
+[ext_resource type="Texture2D" uid="uid://db3j6tx4v4eij" path="res://Characters/Mike/Assets/Sprites/Up/Up 1.svg" id="23_3q7jr"]
+[ext_resource type="Texture2D" uid="uid://r47tntin3p7y" path="res://Characters/Mike/Assets/Sprites/Up/Up 2.svg" id="24_d3csp"]
+[ext_resource type="Texture2D" uid="uid://bpitl1l4guk3j" path="res://Characters/Mike/Assets/Sprites/Up/Up 3.svg" id="25_bntyr"]
+[ext_resource type="Texture2D" uid="uid://dtlgwm4x8t1qg" path="res://Characters/Mike/Assets/Sprites/Up Shoot/Up Shoot 1.svg" id="26_sxnpq"]
+[ext_resource type="Texture2D" uid="uid://bj6e05xpwevxi" path="res://Characters/Mike/Assets/Sprites/Up Shoot/Up Shoot 2.svg" id="27_80xd5"]
+[ext_resource type="Texture2D" uid="uid://cf8au8xl4gwst" path="res://Characters/Mike/Assets/Sprites/Up Shoot/Up Shoot 3.svg" id="28_nt3xl"]
+[ext_resource type="Script" uid="uid://b1dl5a80s886i" path="res://Components/Finite State Machine/FiniteStateMachineComponent.cs" id="29_dk7lf"]
+[ext_resource type="Script" uid="uid://7g5c2ptx5ibg" path="res://Characters/Mike/States/IdleState.cs" id="30_cq52k"]
+[ext_resource type="Script" uid="uid://ct1hcpi3nlxul" path="res://Characters/Mike/States/ShootState.cs" id="31_u53qn"]
+[ext_resource type="Script" uid="uid://c36gsl4e4w2rk" path="res://Characters/Mike/States/ReloadState.cs" id="32_e0l64"]
+[ext_resource type="Script" uid="uid://cnc2lvkgg8x05" path="res://Characters/Mike/States/UpState.cs" id="33_ptsro"]
+[ext_resource type="Script" uid="uid://bjtcwtleowluv" path="res://Characters/Mike/States/UpShootState.cs" id="34_1xxwy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1x1g8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3yrla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dk7lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cq52k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u53qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e0l64")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wgo6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jm0m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ak111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ket7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2p580")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4pjbk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ptsro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1xxwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bo3ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_srb6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sfjdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jumrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b0dv3")
+}],
+"loop": false,
+"name": &"Reload",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ket7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2p580")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4pjbk")
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_3q7jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_d3csp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bntyr")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_sxnpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_80xd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_nt3xl")
+}],
+"loop": false,
+"name": &"Up Shoot",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3yrla"]
+radius = 60.0
+height = 376.0
+
+[node name="Mike" type="Area2D" unique_id=1829606242]
+position = Vector2(640, 360)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_jvhoi")
+
+[node name="Animations" type="AnimatedSprite2D" parent="." unique_id=509084171]
+sprite_frames = SubResource("SpriteFrames_1x1g8")
+animation = &"Up"
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=411893142]
+position = Vector2(-180, -32)
+shape = SubResource("CapsuleShape2D_3yrla")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1035688387 node_paths=PackedStringArray("InitialState")]
+script = ExtResource("29_dk7lf")
+InitialState = NodePath("Idle")
+metadata/_custom_type_script = "uid://b1dl5a80s886i"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=2130228264 node_paths=PackedStringArray("Mike")]
+script = ExtResource("30_cq52k")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="Shoot" type="Node" parent="StateMachine" unique_id=1236607701 node_paths=PackedStringArray("Mike")]
+script = ExtResource("31_u53qn")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="Reload" type="Node" parent="StateMachine" unique_id=1829210942 node_paths=PackedStringArray("Mike")]
+script = ExtResource("32_e0l64")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="Up" type="Node" parent="StateMachine" unique_id=636364140 node_paths=PackedStringArray("Mike")]
+script = ExtResource("33_ptsro")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
+
+[node name="UpShoot" type="Node" parent="StateMachine" unique_id=893510560 node_paths=PackedStringArray("Mike")]
+script = ExtResource("34_1xxwy")
+Mike = NodePath("../..")
+metadata/_custom_type_script = "uid://cv2vm8bf1o2ks"
