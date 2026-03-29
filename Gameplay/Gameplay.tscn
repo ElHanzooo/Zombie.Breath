@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cpx377iqn25hx" path="res://Background/Background.tscn" id="2_jrg7p"]
 [ext_resource type="PackedScene" uid="uid://4kwwmuw6l5e4" path="res://Characters/Mike/Mike.tscn" id="3_5vg7g"]
 
-[node name="Gameplay" type="Node2D" unique_id=1220325708 node_paths=PackedStringArray("Background")]
+[node name="Gameplay" type="Node2D" unique_id=1220325708 node_paths=PackedStringArray("Background", "Characters")]
 script = ExtResource("1_hs5x1")
 Background = NodePath("Background")
+Characters = NodePath("Characters")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=467165396]
 
@@ -15,5 +16,6 @@ Background = NodePath("Background")
 [node name="Characters" type="CanvasLayer" parent="." unique_id=1150913949]
 
 [node name="Mike" parent="Characters" unique_id=1829606242 instance=ExtResource("3_5vg7g")]
+position = Vector2(135, 495)
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1830814885]
