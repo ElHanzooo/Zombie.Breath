@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cpx377iqn25hx"]
+
+[ext_resource type="Texture2D" uid="uid://cf0r76wl5fp76" path="res://Background/Assets/Sprites/Act 1 - Day/Act 1 - Day 1.svg" id="1_2t0lo"]
+[ext_resource type="Texture2D" uid="uid://bm6u75lu31i42" path="res://Background/Assets/Sprites/Act 1 - Day/Act 1 - Day 2.svg" id="2_hxy3p"]
+[ext_resource type="Texture2D" uid="uid://b4231wuiaox5c" path="res://Background/Assets/Sprites/Act 1 - Day/Act 1 - Day 3.svg" id="3_a1v40"]
+[ext_resource type="Texture2D" uid="uid://cod2ed0n3ntsi" path="res://Background/Assets/Sprites/Act 1 - Day/Act 1 - Day 4.svg" id="4_jdn6q"]
+[ext_resource type="Texture2D" uid="uid://cxt2auk5h2878" path="res://Background/Assets/Sprites/Day/Sky - Day.svg" id="5_hxy3p"]
+[ext_resource type="Script" uid="uid://dww2x2asc73kr" path="res://Background/Background.cs" id="5_jdn6q"]
+[ext_resource type="Texture2D" uid="uid://d3671q3dd7aw7" path="res://Background/Assets/Sprites/Day/Sun.svg" id="6_a1v40"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mb1nm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2t0lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hxy3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a1v40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jdn6q")
+}],
+"loop": true,
+"name": &"Act 1 - Day",
+"speed": 8.0
+}]
+
+[node name="Background" type="AnimatedSprite2D" unique_id=784895323]
+position = Vector2(640, 360)
+scale = Vector2(0.67, 0.67)
+sprite_frames = SubResource("SpriteFrames_mb1nm")
+animation = &"Act 1 - Day"
+frame_progress = 0.10607088
+script = ExtResource("5_jdn6q")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=46566259]
+z_index = -2
+scale = Vector2(2.87, 2.87)
+texture = ExtResource("5_hxy3p")
+
+[node name="Sun" type="Sprite2D" parent="." unique_id=1500808303]
+z_index = -1
+position = Vector2(750, -350)
+scale = Vector2(3, 3)
+texture = ExtResource("6_a1v40")
