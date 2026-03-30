@@ -136,7 +136,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_v5v8a"]
 resource_name = "Entry"
-length = 1.2
+length = 2.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -173,14 +173,14 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("White:color:a")
+tracks/3/path = NodePath("Black:color:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.99, 0.0]
+"values": [1.0, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -351,7 +351,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("White:color:a")
+tracks/4/path = NodePath("Black:color:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -435,7 +435,7 @@ animation = &"CBottom"
 animation = &"Entry"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_l2cqw"]
-graph_offset = Vector2(-326.56744, -82.56329)
+graph_offset = Vector2(-144.81947, 0)
 nodes/output/position = Vector2(300, 140)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_dt7la")
 nodes/Add2/position = Vector2(120, 100)
@@ -624,14 +624,14 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_i78tc")
 shortcut = SubResource("Shortcut_51cot")
 text = "ENTER"
 
-[node name="White" type="ColorRect" parent="." unique_id=988522022]
+[node name="Black" type="ColorRect" parent="." unique_id=988522022]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.8509804, 0.8509804, 0.8509804, 0)
+color = Color(0, 0, 0, 0)
 
 [node name="StartPressed" type="Node" parent="." unique_id=258702004 node_paths=PackedStringArray("_startButton")]
 script = ExtResource("20_7f851")
