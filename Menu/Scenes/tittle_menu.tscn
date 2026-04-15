@@ -481,7 +481,10 @@ states/RESET/node = SubResource("AnimationNodeAnimation_4kjr2")
 states/RESET/position = Vector2(317, 100)
 graph_offset = Vector2(0, -17.788748)
 
-[node name="TittleMenu" type="Control" unique_id=2130431488 node_paths=PackedStringArray("_logo", "_ButtonSFX", "_startLogic", "_animationTree")]
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_4kjr2"]
+file = "res://Menu/Splash/splash.ogv"
+
+[node name="TittleMenu" type="Control" unique_id=2130431488 node_paths=PackedStringArray("_logo", "_ButtonSFX", "_startLogic", "_animationTree", "_SplashScreen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -495,6 +498,7 @@ shakeSpeed = 70.0
 _ButtonSFX = NodePath("EnterSFX")
 _startLogic = NodePath("StartPressed")
 _animationTree = NodePath("AnimationTree")
+_SplashScreen = NodePath("Splash")
 
 [node name="Background" type="TextureRect" parent="." unique_id=383344650]
 material = SubResource("ShaderMaterial_4kjr2")
@@ -648,3 +652,14 @@ parameters/EntryCRight/Add2/add_amount = 1.0
 
 [node name="EnterSFX" type="AudioStreamPlayer" parent="." unique_id=1253140796]
 stream = ExtResource("19_dt7la")
+
+[node name="Splash" type="VideoStreamPlayer" parent="." unique_id=1489505656]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_4kjr2")
+autoplay = true
+expand = true
