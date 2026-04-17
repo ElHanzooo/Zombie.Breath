@@ -1,36 +1,27 @@
 using Godot;
 using System;
-//using System.Collections.Generic;
 using Godot.Collections;
 
 public partial class BackgroundHandler : Control
 {
-    [Export] private Control ShaderModulate;
-    [Export] private Dictionary<Episodes, Control> Backgrounds = new();
+    [Export] private Control NodeModulate;
+    [Export] private Dictionary<Episodes, BGConfig> Backgrounds = new();
 
     public void UpdateBackground()
     {
-        foreach (Episodes theme in Backgrounds.Keys)
+        foreach (var config in Backgrounds)
         {
-            if (theme == Global.Instance.Episode)
+            var nodeControl = GetNode<Control>(config.Value.ControlBackgroundPath);
+
+            if (config.Key == Global.Instance.Episode)
             {
-                Backgrounds[theme].Show();
+                nodeControl.Show();
+                NodeModulate.Modulate = config.Value.ModulateColor;
             }
             else
             {
-                Backgrounds[theme].Hide();
+                nodeControl.Hide();
             }
-        }
-
-        if (ShaderModulate != null)
-        {
-            ShaderModulate.Modulate = Global.Instance.Episode switch
-            {
-                Episodes.Day => new Color("ffffff"),
-                Episodes.Afternoon => new Color("ffa569"),
-                Episodes.Night => new Color("547aa1"),
-                _ => ShaderModulate.Modulate
-            };
         }
     }
 }

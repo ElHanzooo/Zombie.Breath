@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bpud4faijrhl2" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_1.png" id="2_uunax"]
 [ext_resource type="Texture2D" uid="uid://bla1e0o2b6w6s" path="res://Menu/Sprites/Main Menu/Buttons/campaign_selected.png" id="3_2snn4"]
 [ext_resource type="Texture2D" uid="uid://cx6lrrcsp4qom" path="res://Menu/Sprites/Main Menu/Background/Ocean/ocean_10.png" id="3_f0lw7"]
+[ext_resource type="Script" uid="uid://diavkur8o5eqo" path="res://Menu/Scripts/Main Menu/BGConfig.cs" id="3_hlynp"]
 [ext_resource type="Texture2D" uid="uid://bs5np0o50fr10" path="res://Menu/Sprites/Main Menu/Background/Boat/boat_2.png" id="3_oecam"]
 [ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="4_2snn4"]
 [ext_resource type="Texture2D" uid="uid://uyfbhglm6tde" path="res://Menu/Sprites/Main Menu/Background/Sky/Sky-Night.svg" id="4_ug7od"]
@@ -56,6 +57,24 @@
 [ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="52_acc5a"]
 [ext_resource type="Texture2D" uid="uid://c63hft5ao8osn" path="res://Menu/Sprites/Main Menu/Buttons/exit.svg" id="52_u01t2"]
 [ext_resource type="Script" uid="uid://dgf07d7pog6k7" path="res://Menu/Scripts/Main Menu/Buttons Actions/ExitAction.cs" id="53_58u2v"]
+
+[sub_resource type="Resource" id="Resource_cplnd"]
+script = ExtResource("3_hlynp")
+ControlBackgroundPath = NodePath("Day")
+ModulateColor = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://diavkur8o5eqo"
+
+[sub_resource type="Resource" id="Resource_42vs4"]
+script = ExtResource("3_hlynp")
+ControlBackgroundPath = NodePath("Afternoon")
+ModulateColor = Color(1, 0.64705884, 0.4117647, 1)
+metadata/_custom_type_script = "uid://diavkur8o5eqo"
+
+[sub_resource type="Resource" id="Resource_36j71"]
+script = ExtResource("3_hlynp")
+ControlBackgroundPath = NodePath("Night")
+ModulateColor = Color(0.32941177, 0.47843137, 0.6313726, 1)
+metadata/_custom_type_script = "uid://diavkur8o5eqo"
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ra7ut"]
 frames = 20
@@ -232,7 +251,7 @@ grow_vertical = 2
 script = ExtResource("1_ra7ut")
 BackgroundHandler = NodePath("Background")
 
-[node name="Background" type="Control" parent="." unique_id=391824983 node_paths=PackedStringArray("ShaderModulate", "Backgrounds")]
+[node name="Background" type="Control" parent="." unique_id=391824983 node_paths=PackedStringArray("NodeModulate")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,12 +259,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h5auv")
-ShaderModulate = NodePath("Modulate")
-Backgrounds = {
-0: NodePath("Day"),
-1: NodePath("Afternoon"),
-2: NodePath("Night")
-}
+NodeModulate = NodePath("Modulate")
+Backgrounds = Dictionary[int, ExtResource("3_hlynp")]({
+0: SubResource("Resource_cplnd"),
+1: SubResource("Resource_42vs4"),
+2: SubResource("Resource_36j71")
+})
 
 [node name="Day" type="Control" parent="Background" unique_id=822986393]
 layout_mode = 1
