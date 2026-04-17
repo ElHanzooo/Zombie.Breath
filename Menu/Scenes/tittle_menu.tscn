@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dvbs7qjh2bxj3" path="res://Menu/Sprites/Tittle Menu/Characters/Zombie Bungee.png" id="15_ssyll"]
 [ext_resource type="Texture2D" uid="uid://ydyajv6ob6x3" path="res://Menu/Sprites/Tittle Menu/Characters/Skeleton.png" id="16_4kjr2"]
 [ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="16_51cot"]
+[ext_resource type="Script" uid="uid://dlmth68k0wmic" path="res://Menu/Scripts/Tittle Menu/CharaConfig.cs" id="17_ofovc"]
 [ext_resource type="Texture2D" uid="uid://sgskbg2smx3n" path="res://Menu/Sprites/Tittle Menu/Button/ENTER.svg" id="18_dt7la"]
 [ext_resource type="Texture2D" uid="uid://b6ornq1xepkkv" path="res://Menu/Sprites/Tittle Menu/Button/ENTER CLICK.svg" id="19_51cot"]
 [ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="19_dt7la"]
@@ -56,6 +57,24 @@ frame_9/duration = 0.1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofovc"]
 shader = ExtResource("2_4kjr2")
 shader_parameter/bright = 4.7499999933364734e-08
+
+[sub_resource type="Resource" id="Resource_ofovc"]
+script = ExtResource("17_ofovc")
+Texture = ExtResource("12_4t1td")
+metadata/_custom_type_script = "uid://dlmth68k0wmic"
+
+[sub_resource type="Resource" id="Resource_8upf4"]
+script = ExtResource("17_ofovc")
+Texture = ExtResource("15_ssyll")
+Scale = Vector2(1.84, 1.84)
+Pivot = Vector2(0, 470)
+metadata/_custom_type_script = "uid://dlmth68k0wmic"
+
+[sub_resource type="Resource" id="Resource_1x8q0"]
+script = ExtResource("17_ofovc")
+Texture = ExtResource("16_4kjr2")
+Pivot = Vector2(0, -40)
+metadata/_custom_type_script = "uid://dlmth68k0wmic"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51cot"]
 texture = ExtResource("18_dt7la")
@@ -568,10 +587,10 @@ grow_vertical = 0
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("12_4t1td")
 script = ExtResource("14_i78tc")
-characterTextures = Dictionary[int, Texture2D]({
-0: ExtResource("12_4t1td"),
-1: ExtResource("15_ssyll"),
-2: ExtResource("16_4kjr2")
+characterConfigs = Dictionary[int, ExtResource("17_ofovc")]({
+0: SubResource("Resource_ofovc"),
+1: SubResource("Resource_8upf4"),
+2: SubResource("Resource_1x8q0")
 })
 
 [node name="BlackBackground" type="TextureRect" parent="." unique_id=1812270304]
