@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ncs8d7821di7"
-path="res://.godot/imported/Button3-a.svg-811aae5ff2dce9b2ca30f5558fb5e5f1.ctex"
+uid="uid://dl6budlom1wfa"
+path="res://.godot/imported/Button.svg-365114aa2c06672fda4d31a02b803752.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/Sprites/Campaign Menu/Button3-a.svg"
-dest_files=["res://.godot/imported/Button3-a.svg-811aae5ff2dce9b2ca30f5558fb5e5f1.ctex"]
+source_file="res://Menu/Sprites/Campaign Menu/Button.svg"
+dest_files=["res://.godot/imported/Button.svg-365114aa2c06672fda4d31a02b803752.ctex"]
 
 [params]
 

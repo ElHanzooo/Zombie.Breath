@@ -23,20 +23,20 @@ public partial class ButtonsHandler : Control
     {
         button.MouseEntered += () => 
         {
-            UpdateLabel(button.GetMeta("Description").AsString());
+            if(_label != null) UpdateLabel(button.GetMeta("Description").AsString());
             if (_hoverSFX != null) _hoverSFX.Play();
             button.OnMouseEntered();
         };
                 
         button.MouseExited += () => 
         {
-            UpdateLabel(String.Empty);
+            if(_label != null) UpdateLabel(String.Empty);
             button.OnMouseExited();
         };
 
         button.Pressed += () => 
         {
-            if (button.GetMeta("Disabled").AsBool())
+            if (button.HasMeta("Disabled") && button.GetMeta("Disabled").AsBool())
             {
                 if (_errorSFX != null) _errorSFX.Play();
                 return;

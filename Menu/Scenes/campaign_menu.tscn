@@ -13,14 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://gnv2ak2cnaqf" path="res://Menu/Sprites/Tittle Menu/Background/9.png" id="9_sekhd"]
 [ext_resource type="Texture2D" uid="uid://cvwya4i4wjgna" path="res://Menu/Sprites/Tittle Menu/Background/3.png" id="10_ta66l"]
 [ext_resource type="Texture2D" uid="uid://ch88mrsg1cdgf" path="res://Menu/Sprites/Campaign Menu/Gradient.svg" id="11_oj7iy"]
-[ext_resource type="Texture2D" uid="uid://ncs8d7821di7" path="res://Menu/Sprites/Campaign Menu/Button3-a.svg" id="12_5y58b"]
 [ext_resource type="Texture2D" uid="uid://078oei2v1oka" path="res://Menu/Sprites/Campaign Menu/Mike/redmike1.svg" id="12_27wm3"]
 [ext_resource type="Script" uid="uid://d32tvek7jdk11" path="res://Menu/Scripts/General/RedBackground.cs" id="12_jfa51"]
 [ext_resource type="Texture2D" uid="uid://0oulaud8a4dl" path="res://Menu/Sprites/Campaign Menu/ACT1.svg" id="13_hgrub"]
 [ext_resource type="Texture2D" uid="uid://iiwla7w2sh50" path="res://Menu/Sprites/Campaign Menu/Mike/redmike2.svg" id="13_tpqbx"]
 [ext_resource type="Texture2D" uid="uid://bsmgbwegu0o50" path="res://Menu/Sprites/Campaign Menu/Mike/redmike3.svg" id="14_c0skb"]
 [ext_resource type="Texture2D" uid="uid://bwpnt0ikq1p6s" path="res://Menu/Sprites/Campaign Menu/Mike/redmike4.svg" id="15_ckrgn"]
+[ext_resource type="Texture2D" uid="uid://c012bp8p1w51q" path="res://Menu/Sprites/Campaign Menu/Decoration.svg" id="16_oj7iy"]
+[ext_resource type="Script" uid="uid://c3mqsn64xw7he" path="res://Menu/Scripts/Campaign Menu/StageSelectedChecker.cs" id="17_27wm3"]
+[ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/General/ButtonsHandler.cs" id="17_tpqbx"]
+[ext_resource type="Texture2D" uid="uid://dl6budlom1wfa" path="res://Menu/Sprites/Campaign Menu/Button.svg" id="18_c0skb"]
 [ext_resource type="Texture2D" uid="uid://dl7jvbrdpyuek" path="res://Menu/Sprites/Campaign Menu/black.svg" id="18_hgrub"]
+[ext_resource type="Script" uid="uid://clnn3xsg84pvx" path="res://Menu/Scripts/Campaign Menu/StageConfig.cs" id="18_tpqbx"]
+[ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="19_tpqbx"]
 [ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="20_4yfre"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sekhd"]
@@ -49,6 +54,33 @@ frame_8/texture = ExtResource("9_sekhd")
 frame_8/duration = 0.1
 frame_9/texture = ExtResource("10_ta66l")
 frame_9/duration = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0skb"]
+shader = ExtResource("2_viyad")
+shader_parameter/bright = 0.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_27wm3"]
+device = -1
+keycode = 4194319
+
+[sub_resource type="Shortcut" id="Shortcut_tpqbx"]
+events = [SubResource("InputEventKey_27wm3")]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpqbx"]
+shader = ExtResource("2_viyad")
+shader_parameter/bright = 0.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_c0skb"]
+device = -1
+keycode = 4194321
+
+[sub_resource type="Shortcut" id="Shortcut_ckrgn"]
+events = [SubResource("InputEventKey_c0skb")]
+
+[sub_resource type="Resource" id="Resource_27wm3"]
+script = ExtResource("18_tpqbx")
+Thumbnail = ExtResource("13_hgrub")
+metadata/_custom_type_script = "uid://clnn3xsg84pvx"
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_1rcqr"]
 frames = 4
@@ -151,7 +183,7 @@ _data = {
 &"RESET": SubResource("Animation_kfl7n")
 }
 
-[node name="CampaignMenu" type="Control" unique_id=862469573 node_paths=PackedStringArray("_AnimationPlayer")]
+[node name="CampaignMenu" type="Control" unique_id=862469573 node_paths=PackedStringArray("_AnimationPlayer", "_StageSelectedChecker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +192,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kfl7n")
 _AnimationPlayer = NodePath("AnimationPlayer")
+_StageSelectedChecker = NodePath("StageSelectedChecker")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1607075361]
 material = SubResource("ShaderMaterial_sekhd")
@@ -188,24 +221,24 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_oj7iy")
 
-[node name="Decoration" type="TextureRect" parent="." unique_id=50363905]
+[node name="Decoration" type="TextureRect" parent="." unique_id=52026160]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -69.0
+offset_left = -46.0
 offset_top = -291.5
-offset_right = 69.0
+offset_right = 46.0
 offset_bottom = -236.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.8, 3.8)
-pivot_offset = Vector2(69, 0)
-texture = ExtResource("12_5y58b")
+pivot_offset = Vector2(46, 0)
+texture = ExtResource("16_oj7iy")
 
-[node name="ACT" type="TextureRect" parent="." unique_id=298863325]
+[node name="ACT" type="TextureRect" parent="Decoration" unique_id=298863325]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -213,14 +246,80 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -322.0
-offset_top = -443.0
+offset_top = -66.0
 offset_right = 322.0
-offset_bottom = 21.0
+offset_bottom = 398.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.1, 1.1)
+scale = Vector2(0.28, 0.28)
 pivot_offset = Vector2(322, 0)
 texture = ExtResource("13_hgrub")
+
+[node name="ButtonsHandler" type="Control" parent="." unique_id=1451317146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_tpqbx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ButtonsHandler" unique_id=1200964335]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.99994
+offset_top = -258.99997
+offset_right = 66.00006
+offset_bottom = -218.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.7, 3.7)
+pivot_offset = Vector2(68, 0)
+theme_override_constants/separation = 105
+
+[node name="BackButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1809255503 groups=["MenuButtons"]]
+material = SubResource("ShaderMaterial_c0skb")
+layout_mode = 2
+shortcut = SubResource("Shortcut_tpqbx")
+texture_normal = ExtResource("18_c0skb")
+texture_pressed = ExtResource("18_c0skb")
+texture_hover = ExtResource("18_c0skb")
+flip_h = true
+script = ExtResource("19_tpqbx")
+Duration = 0.05
+HoverValues = Dictionary[String, Variant]({
+"material:shader_parameter/bright": 0.15
+})
+DefaultValues = Dictionary[String, Variant]({
+"material:shader_parameter/bright": 0.0
+})
+metadata/Disabled = false
+
+[node name="AdvanceButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1175572064 groups=["MenuButtons"]]
+material = SubResource("ShaderMaterial_tpqbx")
+layout_mode = 2
+shortcut = SubResource("Shortcut_ckrgn")
+texture_normal = ExtResource("18_c0skb")
+texture_pressed = ExtResource("18_c0skb")
+texture_hover = ExtResource("18_c0skb")
+script = ExtResource("19_tpqbx")
+Duration = 0.05
+HoverValues = Dictionary[String, Variant]({
+"material:shader_parameter/bright": 0.15
+})
+DefaultValues = Dictionary[String, Variant]({
+"material:shader_parameter/bright": 0.0
+})
+metadata/Disabled = false
+
+[node name="StageSelectedChecker" type="Node" parent="." unique_id=122977337 node_paths=PackedStringArray("_StageInfoPanel")]
+script = ExtResource("17_27wm3")
+_StageInfoPanel = NodePath("../Decoration/ACT")
+_Stages = Array[Object]([SubResource("Resource_27wm3")])
 
 [node name="Mike" type="TextureRect" parent="." unique_id=963520631]
 modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)

@@ -3,7 +3,10 @@ using System;
 
 public partial class CampaignMenu : Control
 {
+    [Signal] public delegate void StartGameEventHandler(int Act, Episodes Episode);
+
     [Export] private AnimationPlayer _AnimationPlayer;
+    [Export] private StageSelectedChecker _StageSelectedChecker;
 
     private bool _IsExiting = false;
 
@@ -38,7 +41,9 @@ public partial class CampaignMenu : Control
                     SceneChanger.Instance.ChangeScene("res://Menu/Scenes/main_menu.tscn");
                     break;
                 default:
-                    GD.Print("O Game cara");
+                    var (act, episode) = _StageSelectedChecker.CheckStage();
+                    EmitSignal(SignalName.StartGame, act, (int)episode);
+                    GD.Print($"Starting game with Act {act} and Episode {episode}");
                     break;
             }
         }
