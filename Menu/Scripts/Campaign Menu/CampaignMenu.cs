@@ -5,8 +5,10 @@ public partial class CampaignMenu : Control
 {
     [Signal] public delegate void StartGameEventHandler(int Act, Episodes Episode);
 
-    [Export] private AnimationPlayer _AnimationPlayer;
+    [Export] private AnimationTree _AnimationTree;
     [Export] private StageSelectedChecker _StageSelectedChecker;
+
+    private AnimationNodeStateMachinePlayback _animationStateMachine;
 
     private bool _IsExiting = false;
 
@@ -14,7 +16,9 @@ public partial class CampaignMenu : Control
     {
         MenuMusicPlayer.Instance.PlayMusic();
 
-        _AnimationPlayer.AnimationFinished += OnAnimationFinished;
+        _animationStateMachine = (AnimationNodeStateMachinePlayback)_AnimationTree.Get("parameters/playback");
+
+        _AnimationTree.AnimationFinished += OnAnimationFinished;
     }
 
     public override void _Input(InputEvent @event)
@@ -22,12 +26,12 @@ public partial class CampaignMenu : Control
         if (@event.IsActionPressed("ui_filedialog_up_one_level"))
         {
             _IsExiting = true;
-            _AnimationPlayer.Play("Out");
+            _animationStateMachine.Travel("Out");
         }
         else if (@event.IsActionPressed("ui_accept"))
         {
             _IsExiting = false;
-            _AnimationPlayer.Play("Out");
+            _animationStateMachine.Travel("Out");
         }
     }
 

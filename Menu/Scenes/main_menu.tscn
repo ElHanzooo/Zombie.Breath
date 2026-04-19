@@ -482,7 +482,6 @@ script = ExtResource("31_obnb7")
 [node name="Minigames" type="TextureButton" parent="ButtonsHandler/VBoxContainer" unique_id=189063826 groups=["MenuButtons"]]
 self_modulate = Color(0.29586652, 0.2958665, 0.2958665, 1)
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("4_uq1xs")
 texture_pressed = ExtResource("5_vqa26")
 texture_hover = ExtResource("5_vqa26")

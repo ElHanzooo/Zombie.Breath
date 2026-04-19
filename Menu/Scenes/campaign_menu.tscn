@@ -27,6 +27,11 @@
 [ext_resource type="Script" uid="uid://clnn3xsg84pvx" path="res://Menu/Scripts/Campaign Menu/StageConfig.cs" id="18_tpqbx"]
 [ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="19_tpqbx"]
 [ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="20_4yfre"]
+[ext_resource type="Script" uid="uid://bsa3csaeq4ar8" path="res://Menu/Scripts/Campaign Menu/Buttons Actions/BackCMAction.cs" id="20_ckrgn"]
+[ext_resource type="Script" uid="uid://d0noqhokxqhds" path="res://Menu/Scripts/Campaign Menu/Buttons Actions/AdvanceAction.cs" id="21_kjfl6"]
+[ext_resource type="AudioStream" uid="uid://d1fbdphn52exi" path="res://Menu/SFX/Main Menu/click.ogg" id="22_jjj4g"]
+[ext_resource type="AudioStream" uid="uid://ckqvptgwlijas" path="res://Menu/SFX/Main Menu/hover.ogg" id="23_mxmyw"]
+[ext_resource type="AudioStream" uid="uid://da6146rcprxt" path="res://Menu/SFX/Main Menu/error.ogg" id="24_kwh8v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sekhd"]
 shader = ExtResource("2_viyad")
@@ -183,6 +188,18 @@ _data = {
 &"RESET": SubResource("Animation_kfl7n")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jjj4g"]
+animation = &"In"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mxmyw"]
+animation = &"Out"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kwh8v"]
+states/In/node = SubResource("AnimationNodeAnimation_jjj4g")
+states/In/position = Vector2(413, 54)
+states/Out/node = SubResource("AnimationNodeAnimation_mxmyw")
+states/Out/position = Vector2(416, 159)
+
 [node name="CampaignMenu" type="Control" unique_id=862469573 node_paths=PackedStringArray("_AnimationPlayer", "_StageSelectedChecker")]
 layout_mode = 3
 anchors_preset = 15
@@ -255,7 +272,7 @@ scale = Vector2(0.28, 0.28)
 pivot_offset = Vector2(322, 0)
 texture = ExtResource("13_hgrub")
 
-[node name="ButtonsHandler" type="Control" parent="." unique_id=1451317146]
+[node name="ButtonsHandler" type="Control" parent="." unique_id=1451317146 node_paths=PackedStringArray("_clickSFX", "_hoverSFX", "_errorSFX")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -263,6 +280,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_tpqbx")
+_clickSFX = NodePath("ClickSFX")
+_hoverSFX = NodePath("HoverSFX")
+_errorSFX = NodePath("ErrorSFX")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ButtonsHandler" unique_id=1200964335]
 layout_mode = 1
@@ -281,7 +301,7 @@ scale = Vector2(3.7, 3.7)
 pivot_offset = Vector2(68, 0)
 theme_override_constants/separation = 105
 
-[node name="BackButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1809255503 groups=["MenuButtons"]]
+[node name="BackCMButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1809255503 groups=["MenuButtons"]]
 material = SubResource("ShaderMaterial_c0skb")
 layout_mode = 2
 shortcut = SubResource("Shortcut_tpqbx")
@@ -299,6 +319,9 @@ DefaultValues = Dictionary[String, Variant]({
 })
 metadata/Disabled = false
 
+[node name="Action" type="Node" parent="ButtonsHandler/HBoxContainer/BackCMButton" unique_id=149882024]
+script = ExtResource("20_ckrgn")
+
 [node name="AdvanceButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1175572064 groups=["MenuButtons"]]
 material = SubResource("ShaderMaterial_tpqbx")
 layout_mode = 2
@@ -315,6 +338,18 @@ DefaultValues = Dictionary[String, Variant]({
 "material:shader_parameter/bright": 0.0
 })
 metadata/Disabled = false
+
+[node name="Action" type="Node" parent="ButtonsHandler/HBoxContainer/AdvanceButton" unique_id=574963954]
+script = ExtResource("21_kjfl6")
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1747038219]
+stream = ExtResource("22_jjj4g")
+
+[node name="HoverSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=836962480]
+stream = ExtResource("23_mxmyw")
+
+[node name="ErrorSFX" type="AudioStreamPlayer" parent="ButtonsHandler" unique_id=1030480072]
+stream = ExtResource("24_kwh8v")
 
 [node name="StageSelectedChecker" type="Node" parent="." unique_id=122977337 node_paths=PackedStringArray("_StageInfoPanel")]
 script = ExtResource("17_27wm3")
@@ -396,3 +431,7 @@ flip_v = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1722704902]
 libraries/ = SubResource("AnimationLibrary_4yfre")
 autoplay = &"In"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=903300431]
+tree_root = SubResource("AnimationNodeStateMachine_kwh8v")
+anim_player = NodePath("../AnimationPlayer")
