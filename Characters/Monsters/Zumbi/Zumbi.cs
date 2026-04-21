@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
-public partial class Zumbi : Area2D
+public partial class Zumbi : Monster
 {
+
 }
