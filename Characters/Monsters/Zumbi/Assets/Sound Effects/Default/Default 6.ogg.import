@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxep005ho7i8g"
+path="res://.godot/imported/Default 6.ogg-62c4689ce98395f97fc56f303d7e458a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Characters/Monsters/Zumbi/Assets/Sound Effects/Default/Default 6.ogg"
+dest_files=["res://.godot/imported/Default 6.ogg-62c4689ce98395f97fc56f303d7e458a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

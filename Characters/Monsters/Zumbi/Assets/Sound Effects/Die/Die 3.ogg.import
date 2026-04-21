@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c36beoq3hqdes"
+path="res://.godot/imported/Die 3.ogg-6e5fa91d91ab92e2b0d38da7f99faced.oggvorbisstr"
+
+[deps]
+
+source_file="res://Characters/Monsters/Zumbi/Assets/Sound Effects/Die/Die 3.ogg"
+dest_files=["res://.godot/imported/Die 3.ogg-6e5fa91d91ab92e2b0d38da7f99faced.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
