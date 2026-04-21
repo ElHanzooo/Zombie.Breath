@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b4j2mbkm0lu1j"]
+
+[ext_resource type="Texture2D" uid="uid://7lohye0lkhha" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Hit/Hit 1.svg" id="1_p48yf"]
+[ext_resource type="Texture2D" uid="uid://bfak3x52t080k" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Hit/Hit 2.svg" id="2_u2evk"]
+[ext_resource type="Texture2D" uid="uid://dj2f688k4xq2n" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Hit/Hit 3.svg" id="3_qbxrf"]
+[ext_resource type="Texture2D" uid="uid://bgbogyuf2a8ev" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Hit/Hit 4.svg" id="4_511vv"]
+[ext_resource type="Texture2D" uid="uid://dg2k0velr4e7c" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Walk/Walk 1.svg" id="5_rkulv"]
+[ext_resource type="Texture2D" uid="uid://b1hjo1j6urc60" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Walk/Walk 2.svg" id="6_6h84x"]
+[ext_resource type="Texture2D" uid="uid://be0ilouf53gyj" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Walk/Walk 3.svg" id="7_bwg34"]
+[ext_resource type="Texture2D" uid="uid://d3gc6qlhmw7sb" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Walk/Walk 4.svg" id="8_l6jos"]
+[ext_resource type="Texture2D" uid="uid://b3gnbxvla7stk" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 4/Walk/Walk 5.svg" id="9_eedax"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p48yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u2evk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qbxrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_511vv")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rkulv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6h84x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bwg34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l6jos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eedax")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]

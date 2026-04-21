@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vbe11k5h64dh"]
+
+[ext_resource type="SpriteFrames" uid="uid://pmpladlc7jxn" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/SpriteFrames.tres" id="1_lanfl"]
+[ext_resource type="Script" uid="uid://pvukvfm76uf7" path="res://Characters/Monsters/Zumbi/Zumbi.cs" id="1_shmuf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lanfl"]
+radius = 72.0
+height = 328.0
+
+[node name="Zumbi" type="Area2D" unique_id=1576225897]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_shmuf")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=1835867611]
+sprite_frames = ExtResource("1_lanfl")
+animation = &"Walk"
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1402364040]
+shape = SubResource("CapsuleShape2D_lanfl")

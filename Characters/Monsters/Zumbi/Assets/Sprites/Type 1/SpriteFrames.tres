@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://pmpladlc7jxn"]
+
+[ext_resource type="Texture2D" uid="uid://djgb418cxpfqg" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Walk/Walk 1.svg" id="1_kruce"]
+[ext_resource type="Texture2D" uid="uid://o4hyjwmaevmk" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Hit/Hit 1.svg" id="1_vfmps"]
+[ext_resource type="Texture2D" uid="uid://cxvgi324hgvev" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Hit/Hit 2.svg" id="2_nkf7s"]
+[ext_resource type="Texture2D" uid="uid://bgwe6l5rtmiev" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Walk/Walk 2.svg" id="2_ugjg6"]
+[ext_resource type="Texture2D" uid="uid://6g2sj3i22inv" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Hit/Hit 3.svg" id="3_6xykp"]
+[ext_resource type="Texture2D" uid="uid://donhoevj0bcy1" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Walk/Walk 3.svg" id="3_n8wlv"]
+[ext_resource type="Texture2D" uid="uid://bk65pwgguq442" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Hit/Hit 4.svg" id="4_nxvqs"]
+[ext_resource type="Texture2D" uid="uid://dc6ieg8s6358t" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Walk/Walk 4.svg" id="4_y8y7y"]
+[ext_resource type="Texture2D" uid="uid://bw36j86je6pu3" path="res://Characters/Monsters/Zumbi/Assets/Sprites/Type 1/Walk/Walk 5.svg" id="5_vfmps"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vfmps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nkf7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6xykp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nxvqs")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kruce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ugjg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n8wlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y8y7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vfmps")
+}],
+"loop": false,
+"name": &"Walk",
+"speed": 8.0
+}]
