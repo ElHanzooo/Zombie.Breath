@@ -1,0 +1,19 @@
+{ PROPRIEDADES }
+    [ Vida: 99 ]
+
+{ PRECISÃO }
+    [ ARGH!!! ]
+        ( Dano causado: 100 )
+        ( Pontuação: 250 )
+    [ Argh! ]
+        ( Dano causado: 50 )
+        ( Pontuação: 100 )
+    [ Pff... ]
+        ( Dano causado: 30 )
+        ( Pontuação: 50 )
+    [ Urgh! ]
+        ( Dano causado: 10 )
+        ( Pontuação: -30 )
+    [ Err... ]
+        ( Dano causado: 0 )
+        ( Pontuação: -50 )

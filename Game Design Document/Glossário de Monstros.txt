@@ -1,0 +1,35 @@
+BUNGEE:
+
+{ PROPRIEDADES }
+    [ Vida: 50 ]
+    [ Dano do ataque: 30 ]
+    [ Velocidade: Andando ]
+
+{ CARACTERÍSTICA ESPECIAL }
+    [ - Mike precisa olhar para cima para acertar um Bungee. ]
+
+ESQUELETO:
+
+{ PROPRIEDADES }
+    [ Vida: 0 ]
+    [ Dano do ataque: 100 ]
+    [ Velocidade: Parado ]
+
+{ OBJETOS }
+    [ Osso ]
+        ( Vida: 0 )
+        ( Dano do ataque: 100 )
+        ( Velocidade: Correndo )
+
+{ CARACTERÍSTICA ESPECIAL }
+    [ - Quando o Esqueleto ameaça atirar o seu osso, a onda de monstros para e o Esqueleto atira o seu osso. Se Mike não conseguir atirar no osso do Esqueleto, o osso o acerta e o mata. Mas, se Mike conseguir atirar no seu osso, ele tem 3 segundos para matar o Esqueleto. Se Mike não conseguir matar o Esqueleto durante esse tempo, o Esqueleto o mata instantaneamente. ]
+
+ZUMBI:
+
+{ PROPRIEDADES }
+    [ Vida: 50 ]
+    [ Dano do ataque: 30 ]
+    [ Velocidade: Andando ]
+
+{ CARACTERÍSTICA ESPECIAL }
+    [ - Se o Zumbi tomar um tiro de precisão "Pff...", sua velocidade diminui. ]

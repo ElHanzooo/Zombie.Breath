@@ -1,0 +1,27 @@
+ACT 1:
+
+{ DAY }
+    [ Quantidade ]
+        ( Bungee: 0 )
+        ( Esqueleto: 0 )
+        ( Zumbi: 10 )
+    [ Tempo ]
+        ( Zumbi: 0s )
+
+{ AFTERNOON }
+    [ Quantidade ]
+        ( Bungee: 4 )
+        ( Esqueleto: 1 )
+        ( Zumbi: 10 )
+    [ Tempo ]
+        ( Bungee: 30s )
+        ( Esqueleto: 1m )
+        ( Zumbi: 0s )
+
+{ NIGHT }
+    [ Quantidade ]
+        ( Bungee: 0 )
+        ( Esqueleto: 20 )
+        ( Zumbi: 0 )
+    [ Tempo ]
+        ( Esqueleto: 0s )
