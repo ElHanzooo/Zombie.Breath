@@ -3,10 +3,10 @@ using System;
 
 public partial class AdvanceAction : ButtonAction
 {
-    [Signal] public delegate void AdvancePressedEventHandler();
+    [Export] private Stage _stage;
 
     public override void Execute()
     {
-        EmitSignal(SignalName.AdvancePressed);
+        _stage.SetStageTexture(1);
     }
 }

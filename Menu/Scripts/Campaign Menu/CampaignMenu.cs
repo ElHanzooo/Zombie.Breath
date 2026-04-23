@@ -17,6 +17,7 @@ public partial class CampaignMenu : Control
         MenuMusicPlayer.Instance.PlayMusic();
 
         _animationStateMachine = (AnimationNodeStateMachinePlayback)_AnimationTree.Get("parameters/playback");
+        _animationStateMachine.Travel("In");
 
         _AnimationTree.AnimationFinished += OnAnimationFinished;
     }

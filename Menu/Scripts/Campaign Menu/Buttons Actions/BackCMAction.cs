@@ -3,10 +3,10 @@ using System;
 
 public partial class BackCMAction : ButtonAction
 {
-    [Signal] public delegate void BackPressedEventHandler();
+    [Export] private Stage _stage;
 
     public override void Execute()
     {
-        EmitSignal(SignalName.BackPressed);
+        _stage.SetStageTexture(-1);
     }
 }
