@@ -26,7 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://dl6budlom1wfa" path="res://Menu/Sprites/Campaign Menu/Button.svg" id="18_c0skb"]
 [ext_resource type="Texture2D" uid="uid://dl7jvbrdpyuek" path="res://Menu/Sprites/Campaign Menu/black.svg" id="18_hgrub"]
 [ext_resource type="Script" uid="uid://clnn3xsg84pvx" path="res://Menu/Scripts/Campaign Menu/StageConfig.cs" id="18_tpqbx"]
+[ext_resource type="Texture2D" uid="uid://dt2plbgs445xm" path="res://Menu/Sprites/Campaign Menu/ActEpisode/ACT1A.svg" id="18_ujxie"]
 [ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="19_tpqbx"]
+[ext_resource type="Texture2D" uid="uid://crw5hu2v2vexb" path="res://Menu/Sprites/Campaign Menu/ActEpisode/ACT1N.svg" id="19_v6rfu"]
 [ext_resource type="FontFile" uid="uid://cief05lqa4qc2" path="res://Menu/Font/impact.ttf" id="20_4yfre"]
 [ext_resource type="Script" uid="uid://bsa3csaeq4ar8" path="res://Menu/Scripts/Campaign Menu/Buttons Actions/BackCMAction.cs" id="20_ckrgn"]
 [ext_resource type="Script" uid="uid://d0noqhokxqhds" path="res://Menu/Scripts/Campaign Menu/Buttons Actions/AdvanceAction.cs" id="21_kjfl6"]
@@ -86,6 +88,18 @@ events = [SubResource("InputEventKey_c0skb")]
 [sub_resource type="Resource" id="Resource_mxmyw"]
 script = ExtResource("18_tpqbx")
 Thumbnail = ExtResource("13_hgrub")
+metadata/_custom_type_script = "uid://clnn3xsg84pvx"
+
+[sub_resource type="Resource" id="Resource_v6q56"]
+script = ExtResource("18_tpqbx")
+Thumbnail = ExtResource("18_ujxie")
+Episode = 1
+metadata/_custom_type_script = "uid://clnn3xsg84pvx"
+
+[sub_resource type="Resource" id="Resource_igcpa"]
+script = ExtResource("18_tpqbx")
+Thumbnail = ExtResource("19_v6rfu")
+Episode = 2
 metadata/_custom_type_script = "uid://clnn3xsg84pvx"
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_1rcqr"]
@@ -268,7 +282,7 @@ scale = Vector2(3.8, 3.8)
 pivot_offset = Vector2(46, 0)
 texture = ExtResource("16_oj7iy")
 script = ExtResource("16_mxmyw")
-_StageTextures = Array[Texture2D]([ExtResource("13_hgrub")])
+_StageTextures = Array[Texture2D]([ExtResource("13_hgrub"), ExtResource("18_ujxie"), ExtResource("19_v6rfu")])
 _buttons = [NodePath("../ButtonsHandler/HBoxContainer/BackCMButton"), NodePath("../ButtonsHandler/HBoxContainer/AdvanceButton")]
 
 [node name="ActEpisode" type="TextureRect" parent="Stage" unique_id=298863325]
@@ -278,13 +292,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -322.0
-offset_top = -66.0
-offset_right = 322.0
-offset_bottom = 398.0
+offset_left = -332.5
+offset_top = -24.5
+offset_right = 530.5
+offset_bottom = 485.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.28, 0.28)
+scale = Vector2(0.095, 0.095)
 pivot_offset = Vector2(322, 0)
 texture = ExtResource("13_hgrub")
 
@@ -320,6 +334,7 @@ theme_override_constants/separation = 105
 [node name="BackCMButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1809255503 groups=["MenuButtons"]]
 material = SubResource("ShaderMaterial_c0skb")
 layout_mode = 2
+focus_mode = 0
 shortcut = SubResource("Shortcut_tpqbx")
 texture_normal = ExtResource("18_c0skb")
 texture_pressed = ExtResource("18_c0skb")
@@ -342,6 +357,7 @@ _stage = NodePath("../../../../Stage")
 [node name="AdvanceButton" type="TextureButton" parent="ButtonsHandler/HBoxContainer" unique_id=1175572064 groups=["MenuButtons"]]
 material = SubResource("ShaderMaterial_tpqbx")
 layout_mode = 2
+focus_mode = 0
 shortcut = SubResource("Shortcut_ckrgn")
 texture_normal = ExtResource("18_c0skb")
 texture_pressed = ExtResource("18_c0skb")
@@ -372,7 +388,7 @@ stream = ExtResource("24_kwh8v")
 [node name="StageSelectedChecker" type="Node" parent="." unique_id=122977337 node_paths=PackedStringArray("_StageInfoPanel")]
 script = ExtResource("17_27wm3")
 _StageInfoPanel = NodePath("../Stage/ActEpisode")
-_Stages = Array[Object]([SubResource("Resource_mxmyw")])
+_Stages = Array[Object]([SubResource("Resource_mxmyw"), SubResource("Resource_v6q56"), SubResource("Resource_igcpa")])
 
 [node name="Mike" type="TextureRect" parent="." unique_id=963520631]
 modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
