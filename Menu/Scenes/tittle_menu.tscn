@@ -645,6 +645,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_7f851")
 theme_override_styles/hover = SubResource("StyleBoxTexture_l2cqw")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_i78tc")
 shortcut = SubResource("Shortcut_51cot")
+shortcut_in_tooltip = false
 text = "ENTER"
 
 [node name="Black" type="ColorRect" parent="." unique_id=988522022]

@@ -32,13 +32,13 @@ public partial class Stage : TextureRect
 
         _currentStage += sum;
 
-        if (_currentStage >= _StageTextures.Count)
+        if (_currentStage > _StageTextures.Count - 1 || _currentStage > (Global.Instance.Act - 1) * 3 + (int)Global.Instance.Episode)
         {
             _currentStage = 0;
         }
         else if (_currentStage < 0)
         {
-            _currentStage = _StageTextures.Count - 1;
+            _currentStage = (Global.Instance.Act - 1) * 3 + (int)Global.Instance.Episode;
         }
 
         _labelTexture.Texture = _StageTextures[_currentStage];
