@@ -204,43 +204,6 @@ _data = {
 &"RESET": SubResource("Animation_3fahj")
 }
 
-[sub_resource type="Animation" id="Animation_acc5a"]
-resource_name = "Cloud"
-length = 32.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Modulate/Cloud:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 32),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1300.0]
-}
-
-[sub_resource type="Animation" id="Animation_u01t2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Modulate/Cloud:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_58u2v"]
-_data = {
-&"Cloud": SubResource("Animation_acc5a"),
-&"RESET": SubResource("Animation_u01t2")
-}
-
 [node name="MainMenu" type="Control" unique_id=941986680 node_paths=PackedStringArray("BackgroundHandler")]
 layout_mode = 3
 anchors_preset = 15
@@ -365,7 +328,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Cloud" type="TextureRect" parent="Background/Modulate" unique_id=506436147 node_paths=PackedStringArray("animationPlayer")]
+[node name="Cloud" type="TextureRect" parent="Background/Modulate" unique_id=506436147]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -642.0
+offset_top = -283.0
+offset_right = 265.00806
+offset_bottom = 401.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_81ftc")
+script = ExtResource("9_n3mha")
+cloudTextures = Array[Texture2D]([ExtResource("8_81ftc"), ExtResource("10_acc5a"), ExtResource("11_u01t2")])
+
+[node name="Cloud2" type="TextureRect" parent="Background/Modulate" unique_id=881679225]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -381,7 +362,6 @@ grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_81ftc")
 script = ExtResource("9_n3mha")
-animationPlayer = NodePath("../AnimationPlayerCloud")
 cloudTextures = Array[Texture2D]([ExtResource("8_81ftc"), ExtResource("10_acc5a"), ExtResource("11_u01t2")])
 
 [node name="Ocean" type="TextureRect" parent="Background/Modulate" unique_id=115071650]
@@ -417,11 +397,6 @@ texture = SubResource("AnimatedTexture_54ljp")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_xawwi")
 autoplay = &"Boat"
-
-[node name="AnimationPlayerCloud" type="AnimationPlayer" parent="Background/Modulate" unique_id=292857428]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_58u2v")
-autoplay = &"Cloud"
 
 [node name="Decoration" type="TextureRect" parent="." unique_id=891675891]
 layout_mode = 1
