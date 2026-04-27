@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bbv4sjoisgxc7" path="res://Menu/Scripts/Options/Options.cs" id="1_3avan"]
 [ext_resource type="Texture2D" uid="uid://bq356whuyke22" path="res://Menu/Sprites/Options/background.svg" id="1_ymca2"]
 [ext_resource type="Texture2D" uid="uid://ch66a5r42pd2k" path="res://Menu/Sprites/Options/mike.svg" id="2_0o6lk"]
-[ext_resource type="Shader" uid="uid://dnoqk210tkd6i" path="res://Menu/Materials/Shadow.gdshader" id="2_vbeui"]
+[ext_resource type="Shader" uid="uid://d2tvwtopmv5ig" path="res://Menu/Materials/Shadow.gdshader" id="2_vbeui"]
 [ext_resource type="Texture2D" uid="uid://doyinf67a1cuu" path="res://Menu/Sprites/Options/zombie.svg" id="3_vbeui"]
-[ext_resource type="Texture2D" uid="uid://ckkir0l8skjn3" path="res://Menu/Sprites/Options/x.svg" id="4_3o08m"]
 [ext_resource type="Script" uid="uid://d0d0hwsjpr5k8" path="res://Menu/Scripts/General/ButtonsHandler.cs" id="5_vbeui"]
 [ext_resource type="Script" uid="uid://q888oofyn36c" path="res://Menu/Scripts/General/GenericUIAnimation.cs" id="7_3o08m"]
+[ext_resource type="Texture2D" uid="uid://c63hft5ao8osn" path="res://Menu/Sprites/Main Menu/Buttons/exit.svg" id="7_6ib4n"]
 [ext_resource type="Script" uid="uid://c8bkyicuwyv06" path="res://Menu/Scripts/Options/Buttons Actions/BackAction.cs" id="9_r1em2"]
 [ext_resource type="AudioStream" uid="uid://cysy7f6mbrw6j" path="res://Menu/SFX/Tittle Menu/startfast.mp3" id="10_6ib4n"]
 [ext_resource type="AudioStream" uid="uid://ckqvptgwlijas" path="res://Menu/SFX/Main Menu/hover.ogg" id="11_6ib4n"]
@@ -251,23 +251,23 @@ _errorSFX = NodePath("ErrorSFX")
 
 [node name="Back" type="TextureButton" parent="ButtonsHandler" unique_id=35849356 groups=["MenuButtons"]]
 layout_mode = 1
-offset_left = -125.0
-offset_top = -125.0
-offset_right = 295.0
-offset_bottom = 295.0
-scale = Vector2(0.27, 0.27)
-pivot_offset = Vector2(210, 210)
-texture_normal = ExtResource("4_3o08m")
-texture_pressed = ExtResource("4_3o08m")
-texture_hover = ExtResource("4_3o08m")
-texture_disabled = ExtResource("4_3o08m")
-texture_focused = ExtResource("4_3o08m")
+offset_left = -80.0
+offset_top = -90.0
+offset_right = 215.0
+offset_bottom = 346.0
+scale = Vector2(0.29, 0.29)
+pivot_offset = Vector2(147, 155)
+texture_normal = ExtResource("7_6ib4n")
+texture_pressed = ExtResource("7_6ib4n")
+texture_hover = ExtResource("7_6ib4n")
+texture_disabled = ExtResource("7_6ib4n")
+texture_focused = ExtResource("7_6ib4n")
 script = ExtResource("7_3o08m")
 HoverValues = Dictionary[String, Variant]({
-"scale": Vector2(0.3, 0.3)
+"scale": Vector2(0.32, 0.32)
 })
 DefaultValues = Dictionary[String, Variant]({
-"scale": Vector2(0.27, 0.27)
+"scale": Vector2(0.29, 0.29)
 })
 metadata/Description = ""
 metadata/Disabled = false
